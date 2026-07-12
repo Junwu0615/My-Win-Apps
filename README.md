@@ -32,9 +32,9 @@
     Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out-File "$HOME\Desktop\installed_apps.txt"
     ```
 
-- #### *[Chocolatey 官方網站](https://community.chocolatey.org/packages)*
+- #### *[參照 Chocolatey 官方網站 ➔ 搜尋對應名稱](https://community.chocolatey.org/packages)*
   ```
-  [1] 製作系統所需應用 軟體 id 參照官方網站 搜尋對應名稱
+  [1] 將系統所需應用 依照官方網站 搜尋對應名稱 ( 軟體 id )
   [2] 填入 ./packages/packages.config
   ```
 
@@ -44,17 +44,7 @@
   ```
   
 - #### *手動名單*
-  ```
-  SurhShark
-  By Click Downloader
-  Kaspersky Password Manager
-  AVerMedia Assist Central
-  
-  tinytask
-  DaVinci Resolve
-  Shutter Encoder
-  Adobe Acrobat DC
-  ```
+  > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權：[連結到手動名單](./packages/manual_install.txt)*
 
 <br>
 
@@ -69,7 +59,7 @@
 
 <br>
 
-### *⭐ C.　Configuration Blueprint*
+### *⭐ D.　Configuration Blueprint*
 <details>
 <summary><b><i>　Tree </i></b></summary>
 <ul>
