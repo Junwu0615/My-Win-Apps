@@ -126,8 +126,13 @@
 
 ### *⭐ D.　BitLocker ( 系統管理員權限執行 )*
 ```
+# 確認 TPM 是否為就緒: 強烈依賴電腦硬體的 TPM ( BIOS 設定 )
+tpm.msc
+
 # 執行加密腳本: C + D 槽加密 
 ./scripts/bit_locker.ps1
+
+Enable-BitLockerAutoUnlock -MountPoint "D:"
 
 # 加密需要時間
   - 腳本執行完畢只代表「開始加密程序」
