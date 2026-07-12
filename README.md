@@ -15,9 +15,15 @@
            能有效防止勒索軟體在背景自動加密系統檔案
 
 
-# 若是系統剛建立 新不要做任何事情 先重新啟動 
-  並去檢視使用者名稱 若非預期的命名 建議重新建立帳戶
-  創建 Admin ( 管理員 ) 後 移除第一個帳戶，接著後續流程 ...
+# 若是系統剛建立 先不要做任何事情 ➔ 優先重新啟動 
+  接著檢視使用者名稱 ➔ 若非預期的命名 建議重新建立帳戶
+  創建 Admin ( 管理員 ) 後 ➔ 移除第一個帳戶，接著後續流程 ...
+  
+# 用 admin 執行 ./scripts/admin_setup.ps1 完畢後 ➔ 創建 User Account ...
+
+# 用 user 執行 ./scripts/user_setup.ps1 完畢後 ➔ 個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )
+
+# 最後進行 Offline Image Deployment 快照作業 ...
 ```
 
 <br>
@@ -58,6 +64,11 @@
     Get-ChildItem -Recurse | Unblock-File
   
     # 若是遇到解析問題 另存新檔為 BOM-UTF8 格式
+    
+    # Chocolatey 為防止下載到被惡意竄改的安裝檔，在每個軟體套件的設定檔中都有記錄一個正確的 sha256 校驗碼
+    Error - hashes do not match. Actual value was '9ACB674A2BA8DF6356DA454D49807E0CA72AC581C49E11522618745B392D1321'.
+    手動校正 ( 因 Chocolatey 社群沒同步更新 )
+    choco install kvrt --checksum="9ACB674A2BA8DF6356DA454D49807E0CA72AC581C49E11522618745B392D1321" -y
     ```
   
 - #### *尚須手動建立應用*
