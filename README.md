@@ -19,7 +19,8 @@
 │
 ├───scripts
 │   ├─── admin_setup.ps1
-│   └─── user_setup.ps1
+│   ├─── user_setup.ps1
+│   └─── bit_locker.ps1
 │
 ├─── .gitignore
 ├─── LICENSE
@@ -34,9 +35,10 @@
 | Stage | Method | Objective |
 |:--|:--|:--|
 | [ 1 ] 環境定義 | admin_setup.ps1 | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| [ 2 ] 環境定義 | user_setup.ps1 | - |
-| [ 3 ] 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
-| [ 4 ] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
+| [ 2 ] 硬碟加鎖 | bit_locker.ps1 | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 |
+| [ 3 ] 環境定義 | user_setup.ps1 | - |
+| [ 4 ] 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
+| [ 5 ] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
 
 
 > #### *系統剛建立先不要做任何事情 ➔ 優先重新啟動*
