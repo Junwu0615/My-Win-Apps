@@ -1,3 +1,4 @@
+QTranslate
 SurfShark
 By Click Downloader
 Kaspersky Password Manager

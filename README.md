@@ -13,6 +13,11 @@
   強化防禦： 因為不是管理員，病毒若想寫入 C:\Windows 或修改系統註冊表，
            會直接被 UAC ( 使用者帳戶控制 ) 擋下，必須輸入密碼才能進行。
            能有效防止勒索軟體在背景自動加密系統檔案
+
+
+# 若是系統剛建立 新不要做任何事情 先重新啟動 
+  並去檢視使用者名稱 若非預期的命名 建議重新建立帳戶
+  創建 Admin ( 管理員 ) 後 移除第一個帳戶，接著後續流程 ...
 ```
 
 <br>
@@ -21,16 +26,16 @@
 > #### *個人化開發環境 : 軟體會隨套件庫更新而變*
 
 - #### *安裝 Boxstarter*
-    ```powershell
-    Set-ExecutionPolicy RemoteSigned -Force
-    iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
-    get-boxstarter -Force
-    ```
+  ```powershell
+  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+  iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
+  get-boxstarter -Force
+  ```
 
 - #### *列出目前所有已安裝應用清單*
-    ```
-    Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out-File "$HOME\Desktop\installed_apps.txt"
-    ```
+  ```
+  Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out-File "$HOME\Desktop\installed_apps.txt"
+  ```
 
 - #### *[參照 Chocolatey 官方網站 ➔ 搜尋對應名稱](https://community.chocolatey.org/packages)*
   ```
@@ -47,7 +52,15 @@
   ./scripts/user_setup.ps1
   ```
   
-- #### *手動名單*
+  - #### *可能會遇到衝突 ...*
+    ```
+    # 若是載下來文件因信任問題而無法使用 需先解鎖 ( 專案根目錄 )
+    Get-ChildItem -Recurse | Unblock-File
+  
+    # 若是遇到解析問題 另存新檔為 BOM-UTF8 格式
+    ```
+  
+- #### *尚須手動建立應用*
   > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權 ： [手動名單](./packages/manual_install.txt)*
 
 <br>
@@ -63,7 +76,19 @@
 
 <br>
 
-### *⭐ D.　Configuration Blueprint*
+### *⭐ D.　開發者體驗 ( Win 開始 )*
+```
+# 匯出設定
+Export-StartLayout -Path "D:\layout.xml"
+
+# 匯入設定
+Import-StartLayout -LayoutPath "D:\layout.xml" -MountPath C:\
+```
+
+
+<br>
+
+### *⭐ E.　Configuration Blueprint*
 <details>
 <summary><b><i>　Tree </i></b></summary>
 <ul>

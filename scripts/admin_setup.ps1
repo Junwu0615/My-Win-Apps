@@ -41,7 +41,11 @@ foreach ($app in $required) {
 }
 
 
-# Write-Host "[4] 同步設定檔..." -ForegroundColor Cyan
+Write-Host "[4] 所有應用更新至最新版 ..." -ForegroundColor Cyan
+choco upgrade all -y
+
+
+# Write-Host "[5] 同步設定檔..." -ForegroundColor Cyan
 # $sourceConfig = "$PSScriptRoot\configs\vscode\settings.json"
 # $destConfig = "$env:APPDATA\Code\User\settings.json"
 #
@@ -50,4 +54,4 @@ foreach ($app in $required) {
 # }
 
 
-Write-Host "[5] 部署完成！ 請重新啟動電腦 ..." -ForegroundColor Cyan
+Write-Host "[6] 部署完成！ 請重新啟動電腦 ..." -ForegroundColor Cyan
