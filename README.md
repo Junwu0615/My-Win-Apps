@@ -43,7 +43,11 @@
 
 > #### *檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 ) ➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
 
-> #### *用 admin 執行 ./scripts/admin_setup.ps1 完畢後 ➔ 創建 User Account ...*
+> #### *用 admin 執行 ./scripts/admin_setup.ps1 完畢後*
+
+> #### *硬碟加鎖 ( BitLocker )*
+
+> #### *創建 User Account ...*
 
 > #### *用 user 執行 ./scripts/user_setup.ps1 完畢後 ➔ 個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
 
@@ -54,11 +58,11 @@
 ### *⭐ B.　Windows Account Creation*
 ```
 [1] Account A： Administrator ( 系統管理員 )
-  帳號用途： 僅用於安裝驅動程式、系統更新、執行 setup.ps1 此類會修改系統核心的腳本
+  帳號用途： 負責底層與全域工具 ( 僅用於安裝驅動程式、系統更新、執行會修改系統核心的腳本 )
   保持習慣： 平時不用此帳號上網，也不把它當作日常帳號
 
 [2] Account B： UserName ( 標準使用者 )
-  帳號用途： 日常開發、GitHub 操作、瀏覽網頁
+  帳號用途： 負責應用程式與個人化環境 ( 日常開發、GitHub 操作、瀏覽網頁 )
   強化防禦： 因為不是管理員，病毒若想寫入 C:\Windows 或修改系統註冊表，
            會直接被 UAC ( 使用者帳戶控制 ) 擋下，必須輸入密碼才能進行。
            能有效防止勒索軟體在背景自動加密系統檔案

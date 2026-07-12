@@ -1,3 +1,10 @@
+# 檢查是否以管理員身分執行
+$currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+if (!($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))) {
+    Write-Error "錯誤： 此腳本必須以「系統管理員身分」執行！請對 PowerShell 按右鍵選擇「以系統管理員身分執行」"
+    exit 1
+}
+
 # 設定 PowerShell 執行權限
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
