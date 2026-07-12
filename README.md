@@ -138,6 +138,7 @@ tpm.msc
 [3] 重新開機 ➔ 重開機進入桌面後，C 碟就會正式轉為加密中（ 保護開啟 ）
 
 [4] 執行該指令 ➔ D 碟的自動解鎖就會成功啟用，以後開機進入 Windows 就不需要手動輸入 D 碟密碼
+manage-bde -unlock D: -RecoveryPassword "48位元修復金鑰"
 Enable-BitLockerAutoUnlock -MountPoint "D:"
 
 [5] 查看加密進度
