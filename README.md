@@ -33,21 +33,19 @@
 
 | Stage | Method | Objective |
 |:--|:--|:--|
-| [1] 環境定義 | setup.ps1 | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| [2] 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
-| [3] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + setup.ps1 ) |
+| [ 1 ] 環境定義 | admin_setup.ps1 | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
+| [ 2 ] 環境定義 | user_setup.ps1 | - |
+| [ 3 ] 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
+| [ 4 ] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + setup.ps1 ) |
 
-```
-# 若是系統剛建立 先不要做任何事情 ➔ 優先重新啟動 
-  接著檢視使用者名稱 ➔ 若非預期的命名 建議重新建立帳戶
-  創建 Admin ( 管理員 ) 後 ➔ 移除第一個帳戶，接著後續流程 ...
-  
-# 用 admin 執行 ./scripts/admin_setup.ps1 完畢後 ➔ 創建 User Account ...
 
-# 用 user 執行 ./scripts/user_setup.ps1 完畢後 ➔ 個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )
+> #### *若是系統剛建立 先不要做任何事情 ➔ 優先重新啟動 接著檢視使用者名稱 ➔ 若非預期的命名 建議重新建立帳戶 創建 Admin ( 管理員 ) 後 ➔ 移除第一個帳戶，接著後續流程 ...*
 
-# 最後進行 Offline Image Deployment 快照作業 ...
-```
+> #### *用 admin 執行 ./scripts/admin_setup.ps1 完畢後 ➔ 創建 User Account ...*
+
+> #### *用 user 執行 ./scripts/user_setup.ps1 完畢後 ➔ 個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
+
+> #### *最後進行 Offline Image Deployment 快照作業 ...*
 
 <br>
 
