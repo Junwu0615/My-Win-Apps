@@ -90,7 +90,7 @@
   ```
 
 - #### *列出目前所有已安裝應用清單*
-  ```
+  ```powershell
   Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out-File "$HOME\Desktop\installed_apps.txt"
   ```
 
@@ -101,7 +101,7 @@
   ```
 
 - #### *⭐ 透過 Boxstarter 自動化還原 ( 系統管理員權限執行 )*
-  ```
+  ```powershell
   # Admin
   ./scripts/admin_setup.ps1
   
@@ -110,7 +110,7 @@
   ```
   
   - #### *可能會遇到衝突 ...*
-    ```
+    ```powershell
     # 若是網上載下來文件因信任問題 ( 未簽署 ) 而無法使用 ➔ 需先解鎖 ( 專案根目錄 )
     Get-ChildItem -Recurse | Unblock-File
   
@@ -128,7 +128,7 @@
 <br>
 
 ### *⭐ D.　BitLocker ( 系統管理員權限執行 )*
-```
+```powershell
 [1] 確認 TPM 是否為就緒: 強烈依賴電腦硬體的 TPM ( BIOS 設定 )
 tpm.msc
 
@@ -144,7 +144,7 @@ Enable-BitLockerAutoUnlock -MountPoint "D:"
 [5] 查看加密進度
 manage-bde -status
 ```
-```
+```powershell
 # 加密需要時間
   - 腳本執行完畢只代表 ➔ 開始加密程序
   - 加密過程可直接切換使用者或重啟電腦是安全的，Windows 會在背景默默把剩下的部分加密完
@@ -161,7 +161,7 @@ manage-bde -protectors -delete C: -id "{???}"
 <br>
 
 ### *⭐ E.　Developer Experience ( Windows Menu )*
-```
+```powershell
 # 匯出設定
 Export-StartLayout -Path "D:\layout.xml"
 
