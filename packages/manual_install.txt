@@ -8,5 +8,5 @@ tinytask
 MEGA Downloader
 DaVinci Resolve
 Shutter Encoder
-Win RAR
-Adobe Acrobat DC
+Win RAR # 已棄用
+Adobe Acrobat DC # 已棄用

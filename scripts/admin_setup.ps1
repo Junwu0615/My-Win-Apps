@@ -1,7 +1,7 @@
 ﻿# 設定 PowerShell 執行權限
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
-Write-Host "[1] 正在安裝 Chocolatey..." -ForegroundColor Cyan
+Write-Host "[1] 正在安裝 Chocolatey ..." -ForegroundColor Cyan
 if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
     iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
@@ -19,7 +19,7 @@ if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 
-Write-Host "[2] 正在依據 admin.config 安裝應用程式..." -ForegroundColor Cyan
+Write-Host "[2] 正在依據 admin.config 安裝應用程式 ..." -ForegroundColor Cyan
 $configDir = "../packages/admin.config"
 $configPath = Join-Path -Path $PSScriptRoot -ChildPath $configDir
 if (Test-Path $configPath) {

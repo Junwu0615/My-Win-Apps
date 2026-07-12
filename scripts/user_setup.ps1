@@ -1,7 +1,7 @@
 # 設定 PowerShell 執行權限
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
-Write-Host "[1] 正在安裝 Chocolatey..." -ForegroundColor Cyan
+Write-Host "[1] 正在安裝 Chocolatey ..." -ForegroundColor Cyan
 if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
     iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
@@ -19,7 +19,7 @@ if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 
-Write-Host "[2] 正在依據 user.config 安裝應用程式..." -ForegroundColor Cyan
+Write-Host "[2] 正在依據 user.config 安裝應用程式 ..." -ForegroundColor Cyan
 $configDir = "../packages/user.config"
 $configPath = Join-Path -Path $PSScriptRoot -ChildPath $configDir
 if (Test-Path $configPath) {
@@ -62,7 +62,7 @@ Write-Host "[4] 所有應用更新至最新版 ..." -ForegroundColor Cyan
 choco upgrade all -y --ignore-checksums --skip-automated-searches
 
 
-# Write-Host "[5] 同步設定檔..." -ForegroundColor Cyan
+# Write-Host "[5] 同步設定檔 ..." -ForegroundColor Cyan
 # $sourceConfig = "$PSScriptRoot\configs\vscode\settings.json"
 # $destConfig = "$env:APPDATA\Code\User\settings.json"
 #
