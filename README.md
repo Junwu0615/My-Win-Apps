@@ -38,13 +38,14 @@
   [2] 填入 ./packages/packages.config
   ```
 
-- #### *⭐ 透過 Boxstarter 自動化還原 ( 系統管理員權限執行 )*
+- #### *⭐ 透過 Boxstarter 自動化還原*
   ```
+  # 系統管理員權限執行
   ./scripts/setup.ps1
   ```
   
 - #### *手動名單*
-  > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權：[連結到手動名單](./packages/manual_install.txt)*
+  > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權 ： [手動名單](./packages/manual_install.txt)*
 
 <br>
 
@@ -69,6 +70,7 @@
 ├───configs
 │   └───.gitkeep
 ├───packages
+│   ├───manual_install.txt
 │   └───packages.config
 ├───scripts
 │   └───setup.ps1
