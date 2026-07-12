@@ -46,13 +46,15 @@
 
 > #### *⭐ 檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
 
-> #### *用 admin 執行 ./scripts/admin_setup.ps1 完畢後*
+> #### *用 admin 執行 ./scripts/admin_setup.ps1*
 
-> #### *硬碟加鎖 ( BitLocker )*
+> #### *進行硬碟加鎖 ( BitLocker ) ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
 
 > #### *創建 User Account*
 
-> #### *用 user 執行 ./scripts/user_setup.ps1 完畢後 ➔ 個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
+> #### *用 user 執行 ./scripts/user_setup.ps1*
+
+> #### *個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
 
 > #### *進行 Offline Image Deployment 快照作業*
 
@@ -133,9 +135,9 @@ tpm.msc
 [2] 執行加密腳本: C + D 槽加密 
 ./scripts/bit_locker.ps1
 
-[3] 重新開機 => 重開機進入桌面後，C 碟就會正式轉為加密中（保護開啟）
+[3] 重新開機 ➔ 重開機進入桌面後，C 碟就會正式轉為加密中（ 保護開啟 ）
 
-[4] 執行該行 D 碟的自動解鎖就會成功啟用，以後開機進入 Windows 就不需要手動輸入 D 碟密碼
+[4] 執行該指令 ➔ D 碟的自動解鎖就會成功啟用，以後開機進入 Windows 就不需要手動輸入 D 碟密碼
 Enable-BitLockerAutoUnlock -MountPoint "D:"
 
 [5] 查看加密進度
@@ -143,7 +145,7 @@ manage-bde -status
 ```
 ```
 # 加密需要時間
-  - 腳本執行完畢只代表 => 開始加密程序
+  - 腳本執行完畢只代表 ➔ 開始加密程序
   - 加密過程可直接切換使用者或重啟電腦是安全的，Windows 會在背景默默把剩下的部分加密完
 
 # 清除 C 碟所有數字密碼保護器
@@ -185,12 +187,12 @@ Import-StartLayout -LayoutPath "D:\layout.xml" -MountPath C:\
 - 保持 Windows Defender 開啟
 
 [ 核心習慣 ]
-- 不下載來路不明的破解軟體（KMS、遊戲外掛、點選「信任」的未知巨集）
+- 不下載來路不明的破解軟體（ KMS、遊戲外掛、點選「信任」的未知巨集 ）
 - 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
 
 [ 定期掃除 ]
-- 執行 KVRT 進行全機深層掃描（防範高危險病毒、勒索軟體）
-- 執行 Malwarebytes（免費版） 掃描（惡意彈窗廣告、流氓瀏覽器綁架、木馬程式）
+- 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
+- 執行 Malwarebytes（ 免費版 ） 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
 ```
 
 <br><br>
