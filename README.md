@@ -13,7 +13,7 @@
 │   └─── .gitkeep
 │
 ├───packages
-│   ├─── manual_install.txt
+│   ├─── manual_install.md
 │   ├─── admin.config
 │   └─── user.config
 │
@@ -34,11 +34,12 @@
 
 | Stage | Method | Objective |
 |:--|:--|:--|
-| [ 1 ] 環境定義 | admin_setup.ps1 | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| [ 2 ] 硬碟加鎖 | bit_locker.ps1 | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 |
-| [ 3 ] 環境定義 | user_setup.ps1 | - |
-| [ 4 ] 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
-| [ 5 ] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
+| [ 1 ] 環境定義 | [admin_setup.ps1](https://github.com/Junwu0615/My-Win-Apps#cinstall-appset) | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
+| [ 2 ] 硬碟加鎖 | [bit_locker.ps1](https://github.com/Junwu0615/My-Win-Apps#-dbitlocker--%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86%E5%93%A1%E6%AC%8A%E9%99%90%E5%9F%B7%E8%A1%8C-) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 |
+| [ 3 ] 環境定義 | [user_setup.ps1](https://github.com/Junwu0615/My-Win-Apps#cinstall-appset) | - |
+| [ 4 ] 個人環境 | [layout.xml](https://github.com/Junwu0615/My-Win-Apps#-edeveloper-experience--windows-menu-) | - |
+| [ 5 ] 備份鏡像 | [Macrium Reflect<br>(.mrimg)](https://github.com/Junwu0615/My-Win-Apps#-foffline-image-deployment) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
+| [ 6 ] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
 
 
 > #### *系統剛建立先不要做任何事情 ➔ 優先重新啟動*
