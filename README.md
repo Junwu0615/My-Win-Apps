@@ -49,11 +49,11 @@
 
 > #### *硬碟加鎖 ( BitLocker )*
 
-> #### *創建 User Account *
+> #### *創建 User Account*
 
 > #### *用 user 執行 ./scripts/user_setup.ps1 完畢後 ➔ 個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
 
-> #### *進行 Offline Image Deployment 快照作業 *
+> #### *進行 Offline Image Deployment 快照作業*
 
 <br>
 
