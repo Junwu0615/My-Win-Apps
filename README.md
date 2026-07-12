@@ -31,9 +31,13 @@
 ### *⭐ B.　Install Appset*
 > #### *個人化開發環境 : 軟體會隨套件庫更新而變*
 
-- #### *安裝 Boxstarter*
+- #### *允許執行腳本 ( 最小權限原則 ➔ 當前用戶 )*
   ```powershell
   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+  ```
+  
+- #### *安裝 Boxstarter*
+  ```powershell
   iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
   get-boxstarter -Force
   ```
@@ -60,7 +64,7 @@
   
   - #### *可能會遇到衝突 ...*
     ```
-    # 若是載下來文件因信任問題而無法使用 需先解鎖 ( 專案根目錄 )
+    # 若是網上載下來文件因信任問題 ( 未簽署 ) 而無法使用 ➔ 需先解鎖 ( 專案根目錄 )
     Get-ChildItem -Recurse | Unblock-File
   
     # 若是遇到解析問題 另存新檔為 BOM-UTF8 格式

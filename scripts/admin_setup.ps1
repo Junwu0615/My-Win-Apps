@@ -62,13 +62,22 @@ Write-Host "[4] 所有應用更新至最新版 ..." -ForegroundColor Cyan
 choco upgrade all -y --ignore-checksums --skip-automated-searches
 
 
-# Write-Host "[5] 同步設定檔..." -ForegroundColor Cyan
-# $sourceConfig = "$PSScriptRoot\configs\vscode\settings.json"
-# $destConfig = "$env:APPDATA\Code\User\settings.json"
-#
-# if (Test-Path $sourceConfig) {
-#     Copy-Item $sourceConfig -Destination $destConfig -Force
-# }
+Write-Host "[5] 同步設定檔至系統預設範本 ( 未來所有新用戶將繼承 ) ..." -ForegroundColor Cyan
+$sourceConfig = "$PSScriptRoot\configs\vscode\settings.json"
+
+# 指向 Windows 的 Default 範本目錄
+$defaultAppData = "C:\Users\Default\AppData\Roaming"
+$destConfig = "$defaultAppData\Code\User\settings.json"
+
+if (Test-Path $sourceConfig) {
+    # 確保目標資料夾存在
+    $destDir = Split-Path $destConfig
+    if (!(Test-Path $destDir)) {
+        New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+    }
+    Copy-Item $sourceConfig -Destination $destConfig -Force
+    Write-Host "[ OK ] 已將 VS Code 設定檔寫入 Default 範本" -ForegroundColor Green
+}
 
 
 Write-Host "[6] 部署完成！ 請重新啟動電腦 ..." -ForegroundColor Cyan
