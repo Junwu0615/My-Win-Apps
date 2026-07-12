@@ -126,18 +126,32 @@
 
 ### *⭐ D.　BitLocker ( 系統管理員權限執行 )*
 ```
-# 確認 TPM 是否為就緒: 強烈依賴電腦硬體的 TPM ( BIOS 設定 )
+[1] 確認 TPM 是否為就緒: 強烈依賴電腦硬體的 TPM ( BIOS 設定 )
 tpm.msc
 
-# 執行加密腳本: C + D 槽加密 
+[2] 執行加密腳本: C + D 槽加密 
 ./scripts/bit_locker.ps1
 
+[3] 重新開機 => 重開機進入桌面後，C 碟就會正式轉為加密中（保護開啟）
+
+[4] 執行該行 D 碟的自動解鎖就會成功啟用，以後開機進入 Windows 就不需要手動輸入 D 碟密碼
 Enable-BitLockerAutoUnlock -MountPoint "D:"
 
+[5] 查看加密進度
+manage-bde -status
+```
+```
 # 加密需要時間
-  - 腳本執行完畢只代表「開始加密程序」
-  - 輸入 manage-bde -status 查看進度
+  - 腳本執行完畢只代表 => 開始加密程序
   - 加密過程可直接切換使用者或重啟電腦是安全的，Windows 會在背景默默把剩下的部分加密完
+
+# 清除 C 碟所有數字密碼保護器
+manage-bde -protectors -delete C: -type RecoveryPassword
+
+# 手動刪除其他不想要的識別碼
+manage-bde -protectors -delete C: -id "{???}"
+
+# 已加密完成的碟 密鑰即不在異動 唯一所在即密鑰區 (務必妥善保管)
 ```
 
 <br>

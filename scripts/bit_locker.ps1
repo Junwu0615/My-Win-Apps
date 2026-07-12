@@ -34,11 +34,11 @@ if ($C_Drive.VolumeStatus -eq "FullyDecrypted") {
     try {
         # 明確為 C 碟手動新增一個修復金鑰保護器
         Write-Host "正在為 C 碟新增修復金鑰保護器..." -ForegroundColor Gray
-        $AddProtectorResult = manage-bde -protectors -add C: -RecoveryPassword
+        $AddProtectorResult = manage-bde -protectors -add C: -RecoveryPassword | Out-Null
 
         # 啟動加密（修正為 xts_aes128）
         Write-Host "正在啟動 C 碟 BitLocker 加密..." -ForegroundColor Gray
-        manage-bde -on C: -UsedSpaceOnly -EncryptionMethod xts_aes128
+        manage-bde -on C: -UsedSpaceOnly -EncryptionMethod xts_aes128 | Out-Null
 
         Write-Host "等待系統同步寫入修復金鑰 ..." -ForegroundColor Gray
         Start-Sleep -Seconds 5
@@ -48,7 +48,7 @@ if ($C_Drive.VolumeStatus -eq "FullyDecrypted") {
 
         if ($BdeStatus -match "\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}") {
             $BdeStatus | Out-File "$BackupDir\BitLocker_C_RecoveryKey.txt" -Force
-            Write-Host "[ OK ] C 碟已啟動加密，修復金鑰已強制導出至 $BackupDir" -ForegroundColor Green
+            Write-Host "[ OK ] C 碟已引導加密，修復金鑰已成功導出至 $BackupDir" -ForegroundColor Green
         } else {
             Write-Warning "偵測到的回應內容：`n$BdeStatus"
             throw "系統已開啟加密，但經由底層工具仍無法讀取到 48 位數的修復金鑰，請確認 TPM 狀態"
@@ -85,19 +85,21 @@ if ($null -ne $D_Drive) {
             if ($D_BdeStatus -match "\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}") {
                 # 匯出金鑰到 E 碟備份
                 $D_BdeStatus | Out-File "$BackupDir\BitLocker_D_RecoveryKey.txt" -Force
-
-                # 啟用自動解鎖功能
-                Enable-BitLockerAutoUnlock -MountPoint "D:" -ErrorAction Stop > $null
-                Write-Host "[ OK ] D 碟已啟動加密，並已成功設定自動解鎖" -ForegroundColor Green
+                Write-Host "[ OK ] D 碟已啟動加密，修復金鑰已成功導出至 $BackupDir" -ForegroundColor Green
             } else {
                 throw "成功引導加密，但未能讀取到 D 碟金鑰檔案文字"
             }
         } catch {
-            Write-Error "D 碟加密或自動解鎖設定失敗，原因: $_"
+            Write-Error "D 碟加密失敗，原因: $_"
             exit 1
         }
     } else {
-        Write-Host "[SKIP] D 碟已經處於加密狀態或正在加密中" -ForegroundColor Yellow
+        Write-Host "[SKIP] D 碟已經處於加密狀態或正在加密中，確保金鑰是否有備份" -ForegroundColor Yellow
+        $D_BdeStatus = manage-bde -protectors -get D: -type RecoveryPassword
+        if ($D_BdeStatus -match "\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}-\d{6}") {
+            $D_BdeStatus | Out-File "$BackupDir\BitLocker_D_RecoveryKey.txt" -Force
+        }
+        Write-Host "[SKIP] D 碟已經處於加密狀態（金鑰已確認備份）" -ForegroundColor Yellow
     }
 } else {
     Write-Host "[FAIL] 找不到 D 碟，請確認磁碟代號是否正確！" -ForegroundColor Red
@@ -105,6 +107,11 @@ if ($null -ne $D_Drive) {
 }
 
 
-Write-Host "[4] 加密程序 ( C + D 硬碟 ) 已安全啟動！" -ForegroundColor Cyan
-Write-Host "修復密鑰已安全放置在 $BackupDir" -ForegroundColor Cyan
-Write-Host "請務必在切換使用者前，將該資料夾複製到外部隨身碟或手機保管！" -ForegroundColor Cyan
+Write-Host "[4] 階段一完成！ C + D 硬碟已安全引導加密！" -ForegroundColor Green
+Write-Host "🔑 修復密鑰已安全放置在：$BackupDir" -ForegroundColor Cyan
+Write-Host "⚠️  請務必在重開機前，將該資料夾複製到外部隨身碟或手機保管！" -ForegroundColor Magenta
+Write-Host "--------------------------------------------------------" -ForegroundColor Gray
+Write-Host "💡 接下來請繼續完成 README 步驟 ([3]、[4]、[5])" -ForegroundColor Yellow
+Write-Host "README [1] 請立即重新開機以通過 C 碟硬體測試。" -ForegroundColor Yellow
+Write-Host "README [2] 進入桌面後，以管理員身分執行： Enable-BitLockerAutoUnlock -MountPoint 'D:'" -ForegroundColor Yellow
+Write-Host "README [3] 輸入 manage-bde -status 查看進度" -ForegroundColor Yellow
