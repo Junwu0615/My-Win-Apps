@@ -69,11 +69,14 @@
 .
 ├───configs
 │   └───.gitkeep
+│
 ├───packages
 │   ├───manual_install.txt
 │   └───packages.config
+│
 ├───scripts
 │   └───setup.ps1
+│
 ├─── .gitignore
 ├─── LICENSE
 └─── README.md
@@ -85,9 +88,9 @@
 <br>
 
 | Stage | Method | Objective |
-|:--:|:--|:--|
-| 1. 環境定義 | setup.ps1 | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| 2. 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
-| 3. 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + setup.ps1 ) |
+|:--|:--|:--|
+| [1] 環境定義 | setup.ps1 | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
+| [2] 備份鏡像 | Macrium Reflect<br>(.mrimg) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
+| [3] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + setup.ps1 ) |
 
 <br><br>
