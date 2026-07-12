@@ -38,10 +38,13 @@
   [2] 填入 ./packages/packages.config
   ```
 
-- #### *⭐ 透過 Boxstarter 自動化還原*
+- #### *⭐ 透過 Boxstarter 自動化還原 ( 系統管理員權限執行 )*
   ```
-  # 系統管理員權限執行
-  ./scripts/setup.ps1
+  # Admin
+  ./scripts/admin_setup.ps1
+  
+  # User
+  ./scripts/user_setup.ps1
   ```
   
 - #### *手動名單*
@@ -68,14 +71,16 @@
 ```bash
 .
 ├───configs
-│   └───.gitkeep
+│   └─── .gitkeep
 │
 ├───packages
-│   ├───manual_install.txt
-│   └───packages.config
+│   ├─── manual_install.txt
+│   ├─── admin.config
+│   └─── user.config
 │
 ├───scripts
-│   └───setup.ps1
+│   ├─── admin_setup.ps1
+│   └─── user_setup.ps1
 │
 ├─── .gitignore
 ├─── LICENSE

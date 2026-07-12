@@ -9,7 +9,7 @@ if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
 
 
 Write-Host "[2] 正在依據 packages.config 安裝應用程式..." -ForegroundColor Cyan
-$configDir = "../packages/packages.config"
+$configDir = "../packages/user.config"
 $configPath = Join-Path -Path $PSScriptRoot -ChildPath $configDir
 if (Test-Path $configPath) {
     choco install $configPath -y
