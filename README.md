@@ -2,7 +2,7 @@
 
 <br>
 
-### *⭐ A.　Configuration Blueprint*
+### *A.　Configuration Blueprint*
 <details>
 <summary><b><i>　Tree </i></b></summary>
 <ul>
@@ -41,7 +41,7 @@
 
 > #### *系統剛建立先不要做任何事情 ➔ 優先重新啟動*
 
-> #### *檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 ) ➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
+> #### *⭐ 檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 ) ➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
 
 > #### *用 admin 執行 ./scripts/admin_setup.ps1 完畢後*
 
@@ -55,14 +55,14 @@
 
 <br>
 
-### *⭐ B.　Windows Account Creation*
+### *B.　Windows Account Creation*
 ```
 [1] Account A： Administrator ( 系統管理員 )
   帳號用途： 負責底層與全域工具 ( 僅用於安裝驅動程式、系統更新、執行會修改系統核心的腳本 )
   保持習慣： 平時不用此帳號上網，也不把它當作日常帳號
 
 [2] Account B： UserName ( 標準使用者 )
-  帳號用途： 負責應用程式與個人化環境 ( 日常開發、GitHub 操作、瀏覽網頁 )
+  帳號用途： 負責應用程式與個人化環境 ( 日常開發、娛樂、瀏覽網頁 ...等 )
   強化防禦： 因為不是管理員，病毒若想寫入 C:\Windows 或修改系統註冊表，
            會直接被 UAC ( 使用者帳戶控制 ) 擋下，必須輸入密碼才能進行。
            能有效防止勒索軟體在背景自動加密系統檔案
@@ -70,15 +70,15 @@
 
 <br>
 
-### *⭐ C.　Install Appset*
+### *C.　Install AppSet*
 > #### *個人化開發環境 : 軟體會隨套件庫更新而變*
 
-- #### *允許執行腳本 ( 最小權限原則 ➔ 當前用戶 )*
+- #### *⭐ 允許執行腳本 ( 最小權限原則 ➔ 當前用戶 )*
   ```powershell
   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
   ```
   
-- #### *安裝 Boxstarter*
+- #### *⭐ 安裝 Boxstarter*
   ```powershell
   iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
   get-boxstarter -Force
@@ -122,24 +122,37 @@
 
 <br>
 
-### *⭐ D.　Offline Image Deployment*
-> #### *離線映像還原 ( 災難還原 ) : 確保系統狀態與驅動程式 100% 回到某個特定時間點*
-
+### *⭐ D.　BitLocker ( 系統管理員權限執行 )*
 ```
-1. 製作啟動隨身碟(Rescue Media)： 當電腦中毒或系統損毀時，無法在 Windows 內部還原 C: 槽，必須透過隨身碟啟動環境 (WinPE) 進行
-2. 創建鏡像： 將安裝好所有驅動、基本軟體、設定的 C: 槽，備份為一個 .mrimg 檔案，存放在隨身硬碟或 NAS
-3. 還原鏡像： 當需要還原時，插上隨身碟啟動 -> 選擇該 .mrimg 檔案 -> 覆寫整個 C: 槽。過程約 5-10 分鐘，且不需要重灌與重新安裝軟體
+# 執行加密腳本: C + D 槽加密 
+./scripts/bit_locker.ps1
+
+# 加密需要時間
+  - 腳本執行完畢只代表「開始加密程序」
+  - 輸入 manage-bde -status 查看進度
+  - 加密過程可直接切換使用者或重啟電腦是安全的，Windows 會在背景默默把剩下的部分加密完
 ```
 
 <br>
 
-### *⭐ E.　Developer Experience ( Win Menu )*
+### *⭐ E.　Developer Experience ( Windows Menu )*
 ```
 # 匯出設定
 Export-StartLayout -Path "D:\layout.xml"
 
 # 匯入設定
 Import-StartLayout -LayoutPath "D:\layout.xml" -MountPath C:\
+```
+
+<br>
+
+### *⭐ F.　Offline Image Deployment*
+> #### *離線映像還原 ( 災難還原 ) : 確保系統狀態與驅動程式 100% 回到某個特定時間點*
+
+```
+1. 製作啟動隨身碟(Rescue Media)： 當電腦中毒或系統損毀時，無法在 Windows 內部還原 C: 槽，必須透過隨身碟啟動環境 (WinPE) 進行
+2. 創建鏡像： 將安裝好所有驅動、基本軟體、設定的 C: 槽，備份為一個 .mrimg 檔案，存放在隨身硬碟或 NAS
+3. 還原鏡像： 當需要還原時，插上隨身碟啟動 -> 選擇該 .mrimg 檔案 -> 覆寫整個 C: 槽。過程約 5-10 分鐘，且不需要重灌與重新安裝軟體
 ```
 
 <br><br>
