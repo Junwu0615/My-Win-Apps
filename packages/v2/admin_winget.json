@@ -1,6 +1,5 @@
 {
   "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-  "CreationDate": "2026-07-13",
   "Sources": [
     {
       "Packages": [
@@ -34,5 +33,5 @@
       }
     }
   ],
-  "WinGetVersion": "1.8"
+  "WinGetVersion": "1.8.0"
 }
