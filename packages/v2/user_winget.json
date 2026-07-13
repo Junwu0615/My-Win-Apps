@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "CreationDate": "2026-07-13",
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Valve.Steam" },
+        { "PackageIdentifier": "Telegram.TelegramDesktop" },
+        { "PackageIdentifier": "Discord.Discord" },
+        { "PackageIdentifier": "Microsoft.Teams" },
+        { "PackageIdentifier": "Zoom.Zoom" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ],
+  "WinGetVersion": "1.8"
+}

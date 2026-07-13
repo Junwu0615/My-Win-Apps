@@ -22,10 +22,10 @@
 #### *C.　⭐ 一鍵安裝應用*
 ```powershell
 # Admin
-winget import -i packages/v2/admin-winget.json --accept-package-agreements --accept-source-agreements
+winget import -i packages/v2/admin_winget.json --accept-package-agreements --accept-source-agreements
 
 # User
-winget import -i packages/v2/user-winget.json --accept-package-agreements --accept-source-agreements
+winget import -i packages/v2/user_winget.json --accept-package-agreements --accept-source-agreements
 ```
 
 <br><br>
