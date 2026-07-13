@@ -42,8 +42,23 @@ manage-bde -protectors -delete C: -id "{???}"
 
 <br>
 
-### *C.　外接硬碟加密*
+### *C.　確認加密有效性*
 ```
+# 資料碟 ➔ 參照 A.[4]
+
+# 系統碟
+    - [再次確認] 檢視 C 碟目前的修復金鑰
+    manage-bde -protectors -get C:
+    
+    - [驗證程序] 強制 C 碟在下次重啟時進入 BitLocker 復原模式
+    manage-bde -forcerecovery C:
+```
+
+<br>
+
+### *D.　外接硬碟加密*
+```
+Coming soon
 ```
 
 <br><br>
