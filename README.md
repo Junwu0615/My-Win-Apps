@@ -67,7 +67,7 @@
   
   > ##### *用 user 執行 ./scripts/user_setup.ps1*
   
-  > ##### *個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
+  > ##### *[用戶個人化環境備份 ( 方便一鍵復原 )](./docs/dev_experience.md)*
   
   > ##### *進行 Offline Image Deployment 快照作業 ( 災難復原 ➔ 回歸該階段 )*
 
@@ -142,10 +142,18 @@ manage-bde -protectors -delete C: -id "{???}"
 ### *⭐ E.　Developer Experience ( Windows Menu )*
 ```powershell
 # 匯出設定
-Export-StartLayout -Path "D:\layout.xml"
+  - 建立備份目標資料夾
+    New-Item -ItemType Directory -Force -Path "D:\Win11StartLayout"
+  - 複製開始功能表的配置資料庫
+    Copy-Item -Path "$env:LocalAppData\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState" -Destination "D:\Win11StartLayout" -Recurse -Force
 
 # 匯入設定
-Import-StartLayout -LayoutPath "D:\layout.xml" -MountPath C:\
+  - 將備份的配置還原回系統路徑
+    Copy-Item -Path "D:\Win11StartLayout\LocalState\*" -Destination "$env:LocalAppData\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState" -Recurse -Force
+
+  - 強制重啟檔案總管與開始功能表程序，讓設定立刻生效
+    Stop-Process -Name "explorer" -Force
+    Stop-Process -Name "StartMenuExperienceHost" -Force -ErrorAction SilentlyContinue
 ```
 
 <br>

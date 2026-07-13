@@ -3,7 +3,7 @@
 
 <br>
 
-#### *A.　⭐ 安裝 Winget*
+### *A.　⭐ 安裝 Winget*
 ```powershell
 # 1. 下載微軟官方最新穩定版 winget 套件 (App Installer) 及其相容核心
 $URL_Winget = "[https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle](https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle)"
@@ -29,7 +29,7 @@ Remove-Item "$env:TEMP\Winget.msixbundle" -ErrorAction SilentlyContinue
 
 <br>
 
-#### *B.　[查找 Winget 支援應用](https://winstall.app/)*
+### *B.　[查找 Winget 支援應用](https://winstall.app/)*
 ```
 [1] 將系統所需應用 依照官方網站 搜尋對應名稱 ( 軟體 id )
 [2-1] 填入 ./packages/v2/admin_winget.json
@@ -38,7 +38,7 @@ Remove-Item "$env:TEMP\Winget.msixbundle" -ErrorAction SilentlyContinue
 
 <br>
 
-#### *C.　⭐ 一鍵安裝應用*
+### *C.　⭐ 一鍵安裝應用*
 ```powershell
 # Admin
 winget import -i packages/v2/admin_winget.json --accept-package-agreements --accept-source-agreements

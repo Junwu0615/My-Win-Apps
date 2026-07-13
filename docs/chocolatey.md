@@ -3,7 +3,7 @@
 
 <br>
 
-#### *A.　⭐ 安裝 Boxstarter*
+### *A.　⭐ 安裝 Boxstarter*
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
 get-boxstarter -Force
@@ -11,14 +11,14 @@ get-boxstarter -Force
 
 <br>
 
-#### *B.　列出目前所有已安裝應用清單*
+### *B.　列出目前所有已安裝應用清單*
 ```powershell
 Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out-File "$HOME\Desktop\installed_apps.txt"
 ```
 
 <br>
 
-#### *C.　[參照 Chocolatey 官方網站 ➔ 搜尋對應名稱](https://community.chocolatey.org/packages)*
+### *C.　[參照 Chocolatey 官方網站 ➔ 搜尋對應名稱](https://community.chocolatey.org/packages)*
 ```
 [1] 將系統所需應用 依照官方網站 搜尋對應名稱 ( 軟體 id )
 [2-1] 填入 ./packages/v1/admin.config
@@ -27,7 +27,7 @@ Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out
 
 <br>
 
-#### *D.　⭐ 透過 Boxstarter 自動化還原 ( 系統管理員權限執行 )*
+### *D.　⭐ 一鍵安裝應用*
 ```powershell
 # Admin
 ./scripts/v1/admin_setup.ps1
@@ -51,7 +51,7 @@ Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out
 
 <br>
 
-#### *E.　全部解除安裝*
+### *E.　全部解除安裝*
 ```powershell
 choco uninstall (choco list --local-only --limit-output | ForEach-Object { $_.Split('|')[0] }) -y
 ```
