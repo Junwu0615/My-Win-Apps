@@ -1,0 +1,41 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "CreationDate": "2026-07-13",
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "GnuWin32.CoreUtils" },
+        { "PackageIdentifier": "Canonical.Ubuntu.2004" },
+        { "PackageIdentifier": "Cmder.Cmder" },
+        { "PackageIdentifier": "Python.Python.3.14" },
+        { "PackageIdentifier": "OpenJS.NodeJS.LTS" },
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "JetBrains.PyCharm.Professional" },
+        { "PackageIdentifier": "ThomasNordquist.MQTT-Explorer" },
+        { "PackageIdentifier": "Geek.GeekUninstaller" },
+        { "PackageIdentifier": "Snipaste.Snipaste" },
+        { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "Voidtools.Everything" },
+        { "PackageIdentifier": "Microsoft.Sysinternals" },
+        { "PackageIdentifier": "Google.Chrome" },
+        { "PackageIdentifier": "7zip.7zip" },
+        { "PackageIdentifier": "Kakao.PotPlayer" },
+        { "PackageIdentifier": "OBSProject.OBSStudio" },
+        { "PackageIdentifier": "NickeManarin.ScreenToGif" },
+        { "PackageIdentifier": "HWiNFO.HWiNFO" },
+        { "PackageIdentifier": "A someaverageguy.TwinkleTray" },
+        { "PackageIdentifier": "VB-Audio.Voicemeeter.Banana" },
+        { "PackageIdentifier": "Razer.Synapse" },
+        { "PackageIdentifier": "Logitech.GHUB" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ],
+  "WinGetVersion": "1.8"
+}

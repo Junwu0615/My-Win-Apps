@@ -9,17 +9,27 @@
 
 ```bash
 .
-├───configs
+├─── assets
+├─── docs
+│   ├─── chocolatey.md
+│   └─── winget.md
+│
+├─── configs
 │   └─── .gitkeep
 │
-├───packages
-│   ├─── manual_install.md
-│   ├─── admin.config
+├─── packages
+│   │    ├─── v1
+│   │    │    ├─── admin.config
+│   │    │    └─── user.config
+│   │    └─── v2
+│   │         ├─── admin_winget.json
+│   │         └─── user_winget.json
 │   └─── user.config
 │
-├───scripts
-│   ├─── admin_setup.ps1
-│   ├─── user_setup.ps1
+├─── scripts
+│   ├─── v1
+│   │    ├─── admin_setup.ps1
+│   │    └─── user_setup.ps1
 │   └─── bit_locker.ps1
 │
 ├─── .gitignore
@@ -34,29 +44,31 @@
 
 | Stage | Method | Objective |
 |:--|:--|:--|
-| [ 1 ] 環境定義 | [admin_setup.ps1](https://github.com/Junwu0615/My-Win-Apps#cinstall-appset) | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| [ 2 ] 硬碟加鎖 | [bit_locker.ps1](https://github.com/Junwu0615/My-Win-Apps#-dbitlocker--%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86%E5%93%A1%E6%AC%8A%E9%99%90%E5%9F%B7%E8%A1%8C-) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 |
-| [ 3 ] 環境定義 | [user_setup.ps1](https://github.com/Junwu0615/My-Win-Apps#cinstall-appset) | - |
+| [ 1 ] 環境定義 | Winget | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
+| [ 2 ] 硬碟加鎖 | [bit_locker.ps1](https://github.com/Junwu0615/My-Win-Apps#-dbitlocker--%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86%E5%93%A1%E6%AC%8A%E9%99%90%E5%9F%B7%E8%A1%8C-) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 ) |
+| [ 3 ] 環境定義 | Winget | - |
 | [ 4 ] 個人環境 | [layout.xml](https://github.com/Junwu0615/My-Win-Apps#-edeveloper-experience--windows-menu-) | - |
 | [ 5 ] 備份鏡像 | [Macrium Reflect<br>(.mrimg)](https://github.com/Junwu0615/My-Win-Apps#-foffline-image-deployment) | 在乾淨環境下製作一次快照 ( USB )，作為備援防線 |
 | [ 6 ] 恢復流程 | 直接還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
 
+<br>
 
-> #### *系統剛建立先不要做任何事情 ➔ 優先重新啟動*
+- #### *Implementation steps*
+  > ##### *系統剛建立先不要做任何事情 ➔ 優先重新啟動*
 
-> #### *⭐ 檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
-
-> #### *用 admin 執行 ./scripts/admin_setup.ps1*
-
-> #### *進行硬碟加鎖 ( BitLocker ) ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
-
-> #### *創建 User Account*
-
-> #### *用 user 執行 ./scripts/user_setup.ps1*
-
-> #### *個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
-
-> #### *進行 Offline Image Deployment 快照作業*
+  > ##### *檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
+  
+  > ##### *用 admin 執行 ./scripts/admin_setup.ps1*
+  
+  > ##### *進行硬碟加鎖 ( BitLocker ) ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
+  
+  > ##### *創建 User Account*
+  
+  > ##### *用 user 執行 ./scripts/user_setup.ps1*
+  
+  > ##### *個人化排版 ➔ 輸出 xml 設定檔 ( 方便一鍵復原 )*
+  
+  > ##### *進行 Offline Image Deployment 快照作業 ( 災難復原 ➔ 回歸該階段 )*
 
 <br>
 
@@ -78,49 +90,15 @@
 ### *C.　Install AppSet*
 > #### *個人化開發環境 : 軟體會隨套件庫更新而變*
 
-- #### *⭐ 允許執行腳本 ( 最小權限原則 ➔ 當前用戶 )*
+- #### *⭐ 允許 PowerShell 執行腳本 ( 最小權限原則 ➔ 當前用戶 )*
   ```powershell
   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
   ```
   
-- #### *⭐ 安裝 Boxstarter*
-  ```powershell
-  iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
-  get-boxstarter -Force
-  ```
+- #### *一鍵安裝所有必要應用*
+  - #### _*[v1 : Boxstarter & Chocolatey](./docs/chocolatey.md)*_
+  - #### _*[v2 : Winget](./docs/winget.md) ⭐*_
 
-- #### *列出目前所有已安裝應用清單*
-  ```powershell
-  Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out-File "$HOME\Desktop\installed_apps.txt"
-  ```
-
-- #### *[參照 Chocolatey 官方網站 ➔ 搜尋對應名稱](https://community.chocolatey.org/packages)*
-  ```
-  [1] 將系統所需應用 依照官方網站 搜尋對應名稱 ( 軟體 id )
-  [2] 填入 ./packages/packages.config
-  ```
-
-- #### *⭐ 透過 Boxstarter 自動化還原 ( 系統管理員權限執行 )*
-  ```powershell
-  # Admin
-  ./scripts/admin_setup.ps1
-  
-  # User
-  ./scripts/user_setup.ps1
-  ```
-  
-  - #### *可能會遇到衝突 ...*
-    ```powershell
-    # 若是網上載下來文件因信任問題 ( 未簽署 ) 而無法使用 ➔ 需先解鎖 ( 專案根目錄 )
-    Get-ChildItem -Recurse | Unblock-File
-  
-    # 若是遇到解析問題 另存新檔為 BOM-UTF8 格式
-    
-    # Chocolatey 為防止下載到被惡意竄改的安裝檔，在每個軟體套件的設定檔中都有記錄一個正確的 sha256 校驗碼
-    Error - hashes do not match. Actual value was '9ACB674A2BA8DF6356DA454D49807E0CA72AC581C49E11522618745B392D1321'.
-    手動校正 ( 因 Chocolatey 社群沒同步更新 )
-    choco install kvrt --checksum="9ACB674A2BA8DF6356DA454D49807E0CA72AC581C49E11522618745B392D1321" -y
-    ```
   
 - #### *尚須手動建立應用*
   > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權 ： [手動安裝名單](./packages/manual_install.md)*

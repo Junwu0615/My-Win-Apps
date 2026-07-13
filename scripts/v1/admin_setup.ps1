@@ -27,7 +27,7 @@ if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
 
 
 Write-Host "[2] 正在依據 admin.config 安裝應用程式 ..." -ForegroundColor Cyan
-$configDir = "../packages/admin.config"
+$configDir = "../packages/v1/admin.config"
 $configPath = Join-Path -Path $PSScriptRoot -ChildPath $configDir
 if (Test-Path $configPath) {
     # 自動同意 + 忽略校驗錯誤
