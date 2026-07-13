@@ -3,6 +3,14 @@
 
 <br>
 
+### *⭐ 允許 PowerShell 執行腳本*
+> #### *最小權限原則 ➔ 當前用戶*
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+```
+  
+<br>
+
 ### *A.　⭐ 安裝 Winget*
 ```powershell
 # 1. 下載微軟官方最新穩定版 winget 套件 (App Installer) 及其相容核心

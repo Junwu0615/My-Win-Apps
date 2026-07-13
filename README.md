@@ -11,20 +11,23 @@
 .
 ├─── assets
 ├─── docs
+│   ├─── bitlocker.md
 │   ├─── chocolatey.md
+│   ├─── dev_experience.md
+│   ├─── manual_install.md
+│   ├─── offline_image_deployment.md
 │   └─── winget.md
 │
 ├─── configs
 │   └─── .gitkeep
 │
 ├─── packages
-│   │    ├─── v1
-│   │    │    ├─── admin.config
-│   │    │    └─── user.config
-│   │    └─── v2
-│   │         ├─── admin_winget.json
-│   │         └─── user_winget.json
-│   └─── user.config
+│   ├─── v1
+│   │    ├─── admin.config
+│   │    └─── user.config
+│   └─── v2
+│        ├─── admin_winget.json
+│        └─── user_winget.json
 │
 ├─── scripts
 │   ├─── v1
@@ -44,34 +47,17 @@
 
 | Stage | Method | Objective |
 |:--|:--|:--|
-| **[ 1 ] 系統環境定義** | [Admin Winget](./docs/winget.md) | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| **[ 2 ] 硬碟加鎖** | [BitLocker](./docs/bitlocker.md) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 ) |
-| **[ 3 ] 用戶環境定義** | [User Winget](./docs/winget.md) | - |
-| **[ 4 ] 個人化環境備份** | [Developer Experience](./docs/dev_experience.md) | - |
-| **[ 5 ] 備份鏡像** | [Clonezilla](./docs/offline_image_deployment.md) | 在乾淨環境下製作一次快照 ➔ 備援防線 |
+| **[ 1 ] 重灌** | - | 系統剛建立先不要做任何事情 ➔ 優先重新啟動 |
+| **[ 2 ] 創建 Admin 帳戶** | - | 檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶 |
+| **[ 3 ] 系統角色應用建置** | [Admin Winget](./docs/winget.md) | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
+| **[ 4 ] 硬碟加鎖** | [BitLocker](./docs/bitlocker.md) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 ) |
+| **[ 5 ] 創建 User 帳戶** | - | - |
+| **[ 6 ] 使用者應用建置** | [User Winget](./docs/winget.md) | - |
+| **[ 7 ] 手動安裝指定應用** | [Manual Install](./docs/manual_install.md) | 應用程式因授權保護或軟體特殊性，需手動安裝或授權 |
+| **[ 8 ] 個人化環境備份** | [Developer Experience](./docs/dev_experience.md) | 方便一鍵復原個人化環境 |
+| **[ 9 ] 進行鏡像快照** | [Clonezilla](./docs/offline_image_deployment.md) | 在乾淨環境下製作一次快照 ➔ 備援防線 |
 | **⭐ 災難復原** | 還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
 | **⭐ 密鑰管理器** | Bitwarden | 9 成密鑰存放處 + 2FA |
-
-<br>
-
-- #### *Implementation steps*
-  > ##### *1.　系統剛建立先不要做任何事情 ➔ 優先重新啟動*
-
-  > ##### *2.　檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
-  
-  > ##### *3.　[用 admin 執行 winget](./docs/winget.md)*
-  
-  > ##### *4.　[進行硬碟加鎖 ( BitLocker )](./docs/bitlocker.md) ➔ 保管密鑰 ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
-  
-  > ##### *5.　創建 User Account*
-  
-  > ##### *6.　[用 user 執行 winget](./docs/winget.md)*
-
-  > ##### *7.　[手動安裝剩餘應用](./docs/manual_install.md)*
-  
-  > ##### *8.　[個人化環境備份 ( 方便一鍵復原 )](./docs/dev_experience.md)*
-  
-  > ##### *9.　[進行鏡像快照](./docs/offline_image_deployment.md)*
 
 <br>
 
@@ -104,21 +90,5 @@
 - 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
 - 執行 Malwarebytes 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
 ```
-
-<br>
-
-### *D.　Install AppSet*
-- #### *⭐ 允許 PowerShell 執行腳本 ( 最小權限原則 ➔ 當前用戶 )*
-  ```powershell
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-  ```
-  
-- #### *一鍵安裝所有必要應用*
-  - #### _*[v1 : Boxstarter & Chocolatey](./docs/chocolatey.md)*_
-  - #### _*[v2 : Winget](./docs/winget.md) ⭐*_
-
-- #### *尚須手動建立應用*
-  > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權 ： [手動安裝名單](./docs/manual_install.md)*
-
 
 <br><br>

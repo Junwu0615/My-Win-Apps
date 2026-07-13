@@ -3,6 +3,14 @@
 
 <br>
 
+### *⭐ 允許 PowerShell 執行腳本*
+> #### *最小權限原則 ➔ 當前用戶*
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+```
+  
+<br>
+
 ### *A.　⭐ 安裝 Boxstarter*
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1'))
