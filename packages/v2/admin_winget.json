@@ -10,6 +10,7 @@
         { "PackageIdentifier": "thomasnordquist.MQTT-Explorer" },
         { "PackageIdentifier": "GeekUninstaller.GeekUninstaller" },
         { "PackageIdentifier": "PixPin.PixPin" },
+        { "PackageIdentifier": "Rufus.Rufus" },
         { "PackageIdentifier": "liule.Snipaste" },
         { "PackageIdentifier": "Microsoft.PowerToys" },
         { "PackageIdentifier": "stnkl.EverythingToolbar" },

@@ -32,3 +32,5 @@ reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" "D
 reg import "D:\Win11StartLayout\taskbar.reg"
 Stop-Process -Name "explorer" -Force
 ```
+
+<br><br>
