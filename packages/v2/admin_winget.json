@@ -13,6 +13,7 @@
         { "PackageIdentifier": "Rufus.Rufus" },
         { "PackageIdentifier": "liule.Snipaste" },
         { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "voidtools.Everything" },
         { "PackageIdentifier": "stnkl.EverythingToolbar" },
         { "PackageIdentifier": "Microsoft.Sysinternals.Suite" },
         { "PackageIdentifier": "Google.Chrome" },
@@ -23,7 +24,7 @@
         { "PackageIdentifier": "REALiX.HWiNFO" },
         { "PackageIdentifier": "xanderfrangos.twinkletray" },
         { "PackageIdentifier": "VB-Audio.Voicemeeter.Banana" },
-        { "PackageIdentifier": "RazerInc.RazerInstaller.Synapse3" },
+        { "PackageIdentifier": "RazerInc.RazerInstaller.Synapse4" },
         { "PackageIdentifier": "Logitech.GHUB" }
       ],
       "SourceDetails": {
