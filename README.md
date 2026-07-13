@@ -44,13 +44,13 @@
 
 | Stage | Method | Objective |
 |:--|:--|:--|
-| [ 1 ] 系統環境定義 | Winget | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| [ 2 ] 硬碟加鎖 | [bit_locker.ps1](https://github.com/Junwu0615/My-Win-Apps#-dbitlocker--%E7%B3%BB%E7%B5%B1%E7%AE%A1%E7%90%86%E5%93%A1%E6%AC%8A%E9%99%90%E5%9F%B7%E8%A1%8C-) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 ) |
-| [ 3 ] 用戶環境定義 | Winget | - |
-| [ 4 ] 用戶個人化環境 | [layout.xml](https://github.com/Junwu0615/My-Win-Apps#-edeveloper-experience--windows-menu-) | - |
-| [ 5 ] 備份鏡像 | [Clonezilla](https://github.com/Junwu0615/My-Win-Apps#-foffline-image-deployment) | 在乾淨環境下製作一次快照 ➔ 備援防線 |
-| [ ⭐ ] 災難復原 | 還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
-| [ ⭐ ] 密鑰管理器 | Bitwarden | 9成密鑰存放處 + 2FA |
+| **[ 1 ] 系統環境定義** | [Admin Winget](./docs/winget.md) | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
+| **[ 2 ] 硬碟加鎖** | [BitLocker](./docs/bitlocker.md) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 ) |
+| **[ 3 ] 用戶環境定義** | [User Winget](./docs/winget.md) | - |
+| **[ 4 ] 個人化環境備份** | [Developer Experience](./docs/dev_experience.md) | - |
+| **[ 5 ] 備份鏡像** | [Clonezilla](./docs/offline_image_deployment.md) | 在乾淨環境下製作一次快照 ➔ 備援防線 |
+| **⭐ 災難復原** | 還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
+| **⭐ 密鑰管理器** | Bitwarden | 9 成密鑰存放處 + 2FA |
 
 <br>
 
@@ -59,17 +59,19 @@
 
   > ##### *2.　檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
   
-  > ##### *3.　用 admin 執行 ./scripts/admin_setup.ps1*
+  > ##### *3.　[用 admin 執行 winget](./docs/winget.md)*
   
   > ##### *4.　[進行硬碟加鎖 ( BitLocker )](./docs/bitlocker.md) ➔ 保管密鑰 ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
   
   > ##### *5.　創建 User Account*
   
-  > ##### *6.　用 user 執行 ./scripts/user_setup.ps1*
+  > ##### *6.　[用 user 執行 winget](./docs/winget.md)*
+
+  > ##### *7.　[手動安裝剩餘應用](./docs/manual_install.md)*
   
-  > ##### *7.　[用戶個人化環境備份 ( 方便一鍵復原 )](./docs/dev_experience.md)*
+  > ##### *8.　[個人化環境備份 ( 方便一鍵復原 )](./docs/dev_experience.md)*
   
-  > ##### *8.　[進行快照作業](./docs/offline_image_deployment.md) ( 災難復原 ➔ 回歸該階段 )*
+  > ##### *9.　[進行鏡像快照](./docs/offline_image_deployment.md)*
 
 <br>
 
@@ -116,7 +118,7 @@
   - #### _*[v2 : Winget](./docs/winget.md) ⭐*_
 
 - #### *尚須手動建立應用*
-  > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權 ： [手動安裝名單](./packages/manual_install.md)*
+  > #### *備註 : 以下應用程式因授權保護或軟體特殊性，需手動安裝或授權 ： [手動安裝名單](./docs/manual_install.md)*
 
 
 <br><br>
