@@ -45,19 +45,20 @@
 
 <br>
 
-| Stage | Method | Objective |
+| _Stage_ | _Method_ | _Objective_ |
 |:--|:--|:--|
-| **[ 1 ] 重灌** | - | 系統剛建立先不要做任何事情 ➔ 優先重新啟動 |
-| **[ 2 ] 創建 Admin 帳戶** | - | 檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶 |
-| **[ 3 ] 系統角色應用建置** | [Admin Winget](./docs/winget.md) | 透過 Git 管理，隨時可以在新電腦部署開發環境 |
-| **[ 4 ] 硬碟加鎖** | [BitLocker](./docs/bitlocker.md) | 預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 ) |
-| **[ 5 ] 創建 User 帳戶** | - | - |
-| **[ 6 ] 使用者應用建置** | [User Winget](./docs/winget.md) | - |
-| **[ 7 ] 手動安裝指定應用** | [Manual Install](./docs/manual_install.md) | 應用程式因授權保護或軟體特殊性，需手動安裝或授權 |
-| **[ 8 ] 個人化環境備份** | [Developer Experience](./docs/dev_experience.md) | 方便一鍵復原個人化環境 |
-| **[ 9 ] 進行鏡像快照** | [Clonezilla](./docs/offline_image_deployment.md) | 在乾淨環境下製作一次快照 ➔ 備援防線 |
-| **⭐ 災難復原** | 還原鏡像 | 鏡像恢復 ( 該快照包含穩定的系統底層 + 環境定義 ) |
-| **⭐ 密鑰管理器** | Bitwarden | 9 成密鑰存放處 + 2FA |
+| **1.　重灌** | - | _系統剛建立先不要做任何事情 ➔ 優先重新啟動_ |
+| **2.　創建 Admin 帳戶** | - | _檢視使用者名稱 ➔ 若非預期的命名<br>➔ 直接重新建立新帳戶 ( 非 MS 登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶_ |
+| **3.　Admin 應用建置** | _[Admin Winget](./docs/winget.md)_ | _透過 Git 管理，隨時可以在新電腦部署開發環境_ |
+| **4.　硬碟加鎖** | _[BitLocker](./docs/bitlocker.md)_ | _預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 )_ |
+| **5.　創建 User 帳戶** | - | 一般權限 |
+| **6.　User 應用建置** | _[User Winget](./docs/winget.md)_ | - |
+| **7.　手動安裝指定應用** | _[Manual Install](./docs/manual_install.md)_ | _應用程式因授權保護或軟體特殊性，需手動安裝或授權_ |
+| **8.　個人化環境備份** | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
+| **9.　進行鏡像快照** | _[Clonezilla](./docs/offline_image_deployment.md)_ | _乾淨環境下製作一次快照 ➔ 備援防線_ |
+|   |   |   |
+| **⭐ 災難復原** | _還原鏡像_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
+| **⭐ 密鑰管理器** | _Bitwarden_ | _9 成密鑰存放處 + 2FA_ |
 
 <br>
 
@@ -84,11 +85,13 @@
 [ 核心習慣 ]
 - 不下載來路不明的破解軟體（ KMS、遊戲外掛、點選「信任」的未知巨集 ）
 - 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
+- 不用瀏覽器不合規插件 + cookie 密碼管理
 - 統一用 Bitwarden 管理大部分密鑰 + 2FA ( 註: 冷儲存不能少 )
 
 [ 定期掃除 ]
 - 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
 - 執行 Malwarebytes 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
+- 執行 ESET Online Scanner 掃描
 ```
 
 <br><br>
