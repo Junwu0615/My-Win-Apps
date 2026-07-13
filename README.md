@@ -55,21 +55,21 @@
 <br>
 
 - #### *Implementation steps*
-  > ##### *系統剛建立先不要做任何事情 ➔ 優先重新啟動*
+  > ##### *1.　系統剛建立先不要做任何事情 ➔ 優先重新啟動*
 
-  > ##### *檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
+  > ##### *2.　檢視使用者名稱 ➔ 若非預期的命名 直接重新建立新帳戶 ( 非登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶*
   
-  > ##### *用 admin 執行 ./scripts/admin_setup.ps1*
+  > ##### *3.　用 admin 執行 ./scripts/admin_setup.ps1*
   
-  > ##### *[進行硬碟加鎖 ( BitLocker )](./docs/bitlocker.md) ➔ 保管密鑰 ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
+  > ##### *4.　[進行硬碟加鎖 ( BitLocker )](./docs/bitlocker.md) ➔ 保管密鑰 ➔ 重新啟動 ➔ 自動解鎖非系統碟鎖*
   
-  > ##### *創建 User Account*
+  > ##### *5.　創建 User Account*
   
-  > ##### *用 user 執行 ./scripts/user_setup.ps1*
+  > ##### *6.　用 user 執行 ./scripts/user_setup.ps1*
   
-  > ##### *[用戶個人化環境備份 ( 方便一鍵復原 )](./docs/dev_experience.md)*
+  > ##### *7.　[用戶個人化環境備份 ( 方便一鍵復原 )](./docs/dev_experience.md)*
   
-  > ##### *[進行快照作業](./docs/offline_image_deployment.md) ( 災難復原 ➔ 回歸該階段 )*
+  > ##### *8.　[進行快照作業](./docs/offline_image_deployment.md) ( 災難復原 ➔ 回歸該階段 )*
 
 <br>
 
