@@ -67,6 +67,20 @@ winget import -i packages/v2/user_winget.json --accept-package-agreements --acce
     winget install Logitech.GHUB --ignore-security-hash
     
 
+# 部分應用不需要管理員權限 所以噴錯
+winget install Canonical.Ubuntu.2404 --scope user
+winget install Microsoft.VisualStudioCode --scope user
+winget install thomasnordquist.MQTT-Explorer --scope user
+winget install GeekUninstaller.GeekUninstaller --scope user
+winget install PixPin.PixPin --scope machine
+winget install Rufus.Rufus --scope user
+winget install liule.Snipaste --scope user
+winget install Microsoft.PowerToys --scope user
+winget install Microsoft.Sysinternals.Suite --scope user
+winget install NickeManarin.ScreenToGif --scope user
+winget install xanderfrangos.twinkletray --scope user
+winget install Discord.Discord --scope user
+winget install Telegram.TelegramDesktop --scope user
 ```
 
 
