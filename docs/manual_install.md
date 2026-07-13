@@ -15,13 +15,13 @@
 - #### *[ 定期掃毒 ] [Malwarebytes](https://www.malwarebytes.com/)*
 - #### *Windows-Sandbox*
   ```powershell
-  Enable-WindowsOptionalFeature -Online -FeatureName "Containers-DisposableVM" -All
+  Enable-WindowsOptionalFeature -Online -FeatureName "Containers-DisposableClientVM" -All
   ```
 
 <br>
 
 ### *密鑰管理器*
-- #### *[Bitwarden](https://bitwarden.com/)*
+- #### *⭐ [Bitwarden](https://bitwarden.com/)*
 - #### *[Kaspersky Password Manager](https://www.kaspersky.com.tw/)*
 
 <br>
@@ -34,11 +34,22 @@
 <br>
 
 ### *日常應用*
-- #### *[Line](https://www.line.me/tw/)*
-- #### *[Bluestacks ( 模擬器 )](https://www.bluestacks.com/download.html)*
-- #### *[QTranslate ( 翻譯工具 )](https://qtranslate.en.softonic.com/)*
-- #### *[SurfShark ( VPN )](https://surfshark.com/zh-tw)*
-- #### *[By Click Downloader ( YT Download )](https://www.byclickdownloader.com/zh/)*
+- #### *社群軟體*
+  - #### *[Line](https://www.line.me/tw/)*
+
+- #### *模擬器*
+  - #### *[Bluestacks](https://www.bluestacks.com/download.html)*
+
+- #### *翻譯工具*
+  - #### *QTranslate ( 安全度不夠 )*
+  - #### *[DeepL Desktop](https://www.deepl.com/en/app/thanks?os=windows)*
+
+- #### *VPN*
+  - #### *[SurfShark](https://surfshark.com/zh-tw)*
+
+- #### *下載器*
+  - #### *[By Click Downloader ( YT Download )](https://www.byclickdownloader.com/zh/)*
+  - #### *[MEGA Downloader](https://megadownloader.en.softonic.com/)*
 
 <br>
 
@@ -58,7 +69,6 @@
     ```
 
 - #### *[tinytask ( 腳本精靈 )](https://www.tinytask.net/)*
-- #### *[MEGA Downloader](https://megadownloader.en.softonic.com/)*
 - #### *[DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve)*
 - #### *[Shutter Encoder](https://www.shutterencoder.com/)*
 - #### *Win RAR ( 棄用 )*
