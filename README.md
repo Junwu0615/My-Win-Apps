@@ -13,6 +13,7 @@
 ├─── docs
 │   ├─── bitlocker.md
 │   ├─── chocolatey.md
+│   ├─── defense_in_depth.md
 │   ├─── dev_experience.md
 │   ├─── manual_install.md
 │   ├─── offline_image_deployment.md
@@ -48,14 +49,15 @@
 | _Stage_ | _Method_ | _Objective_ |
 |:--|:--|:--|
 | **1.　重灌** | - | _系統剛建立先不要做任何事情 ➔ 優先重新啟動_ |
-| **2.　創建 Admin 帳戶** | - | _檢視使用者名稱 ➔ 若非預期的命名<br>➔ 直接重新建立新帳戶 ( 非 MS 登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶_ |
-| **3.　Admin 應用建置** | _[Admin Winget](./docs/winget.md)_ | _透過 Git 管理，隨時可以在新電腦部署開發環境_ |
-| **4.　硬碟加鎖** | _[BitLocker](./docs/bitlocker.md)_ | _預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 )_ |
-| **5.　創建 User 帳戶** | - | 一般權限 |
-| **6.　User 應用建置** | _[User Winget](./docs/winget.md)_ | - |
-| **7.　手動安裝指定應用** | _[Manual Install](./docs/manual_install.md)_ | _應用程式因授權保護或軟體特殊性，需手動安裝或授權_ |
-| **8.　個人化環境備份** | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
-| **9.　進行鏡像快照** | _[Clonezilla](./docs/offline_image_deployment.md)_ | _乾淨環境下製作一次快照 ➔ 備援防線_ |
+| **2.　創建 Admin 帳戶** | - | _檢視使用者名稱 ➔ 若非預期的命名<br>➔ 直接重新建立新帳戶 ( 非 MS 登入 )<br>➔ 創建 Admin ( 管理員 ) ➔ 移除第一個帳戶<br><br>封鎖木馬/勒索病毒 ➔ 直接修改系統與大面積破壞_ |
+| **3.　Admin 應用建置** | _[Admin Winget](./docs/winget.md)_ | _透過 Git 管理，隨時可在新電腦部署全域應用_ |
+| **4.　硬碟加鎖** | _[BitLocker](./docs/bitlocker.md)_ | _封鎖物理攻擊 : 實體竊盜 + WinPE 入侵_ |
+| **5.　縱深防禦** | _[Defense in Depth](./docs/defense_in_depth.md)_ | _將 UAC 提權與安全桌面防禦頂滿 ( 防劫持 + 防監聽 )_ |
+| **6.　創建 User 帳戶** | - | _一般權限 ( 99.99 % 都在此活動 )_ |
+| **7.　User 應用建置** | _[User Winget](./docs/winget.md)_ | _透過 Git 管理，隨時可在新電腦部署開發應用_ |
+| **8.　手動安裝指定應用** | _[Manual Install](./docs/manual_install.md)_ | _應用程式因授權保護或軟體特殊性，需手動安裝或授權_ |
+| **9.　個人化環境備份** | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
+| **10.　進行鏡像快照** | _[Clonezilla](./docs/offline_image_deployment.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
 |   |   |   |
 | **⭐ 災難復原** | _還原鏡像_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
 | **⭐ 密鑰管理器** | _Bitwarden_ | _9 成密鑰存放處 + 2FA_ |

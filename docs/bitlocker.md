@@ -1,6 +1,8 @@
 ## *⭐ BitLocker ⭐*
 > #### *系統管理員權限執行*
 
+> #### *預設 3 個硬碟 C/D/E ; 密鑰放在 E 槽 ( 暫時 ➔ 存放安全位置 )*
+
 <br>
 
 ### *A.　⭐ 操作步驟*
@@ -36,6 +38,12 @@ manage-bde -protectors -delete C: -type RecoveryPassword
 manage-bde -protectors -delete C: -id "{???}"
 
 # 已加密完成的碟 密鑰即不在異動 唯一所在即密鑰區 (務必妥善保管)
+```
+
+<br>
+
+### *C.　外接硬碟加密*
+```
 ```
 
 <br><br>
