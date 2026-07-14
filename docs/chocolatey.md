@@ -50,6 +50,7 @@ Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out
   Get-ChildItem -Recurse | Unblock-File
   
   # 若是遇到解析問題 另存新檔為 BOM-UTF8 格式
+  ./scripts/fix_encoding.ps1
     
   # Chocolatey 為防止下載到被惡意竄改的安裝檔，在每個軟體套件的設定檔中都有記錄一個正確的 sha256 校驗碼
   Error - hashes do not match. Actual value was '9ACB674A2BA8DF6356DA454D49807E0CA72AC581C49E11522618745B392D1321'.
