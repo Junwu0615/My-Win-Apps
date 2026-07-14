@@ -57,10 +57,11 @@
 | **7.　User 應用建置** | _[User Winget](./docs/winget.md)_ | _透過 Git 管理，隨時可在新電腦部署開發應用_ |
 | **8.　手動安裝指定應用** | _[Manual Install](./docs/manual_install.md)_ | _應用程式因授權保護或軟體特殊性，需手動安裝或授權_ |
 | **9.　個人化環境備份** | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
-| **10.　進行鏡像快照** | _[Clonezilla](./docs/offline_image_deployment.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
+| **10.　鏡像快照** | _[Clonezilla](./docs/offline_image_deployment.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
 |   |   |   |
 | **⭐ 災難復原** | _還原鏡像_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
-| **⭐ 密鑰管理器** | _Bitwarden_ | _9 成密鑰存放處 + 2FA_ |
+| **⭐ 密鑰管理器** | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼（Master Password）+<br>BitLocker 密鑰復原檔（Recovery Key）_ |
+| **⭐ 多元檔案管理器** | _Cryptomator_ | _地/雲端 ( 雙向同步/鏡像 ) + 加密資料夾_ |
 
 <br>
 
@@ -89,6 +90,9 @@
  - 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
  - 不用瀏覽器不合規插件 + cookie 密碼管理
  - 統一用 Bitwarden 管理大部分密鑰 + 2FA ( 註: 冷儲存不能少 )
+ - 敏感資訊用匿名瀏覽器或獨立瀏覽器 ( 禁止外掛插件介入 )
+    - 日常瀏覽 Google Chrome
+    - 敏感瀏覽 Microsoft Edge
 
 [ 定期掃除 ]
  - 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
