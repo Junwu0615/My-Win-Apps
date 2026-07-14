@@ -3,7 +3,7 @@
 
 <br>
 
-### *A.　⭐ 事前準備工具*
+### *A.　⭐ 事前準備*
 - #### *1. 大容量空白隨身碟*
   - #### *做 Clonezilla 開機碟 ( 啟動隨身碟 ➔ To-RAM )*
   - #### *儲存備份出來的映像檔資料夾 ( 兼存放映像檔 )*
@@ -12,6 +12,15 @@
 
 - #### *2. Rufus 燒錄軟體*
   - #### *將 Clonezilla ISO 檔燒進隨身碟*
+
+- #### *3. 系統大瘦身*
+  ```
+  # 清理系統元件 (WinSxS): 掃描並清除被取代的 Windows 元件 (此動作不可逆，清理完後無法解除安裝過往更新)
+  dism /online /cleanup-image /startcomponentcleanup /resetbase
+  
+  # 瘦身腳本
+  ./scripts/optimize_system.ps1
+  ```
 
 <br>
 
