@@ -82,7 +82,8 @@
 ### *娛樂應用*
 - #### *模擬器*
   - #### *[Bluestacks](https://www.bluestacks.com/download.html)*
-- #### *[tinytask ( 腳本精靈 )](https://www.tinytask.net/)*
+  - #### *[APKPure 非官方市場](https://apkpure.com/tw/)*
+- #### *[Tinytask ( 腳本精靈 )](https://www.tinytask.net/)*
 
 <br>
 
