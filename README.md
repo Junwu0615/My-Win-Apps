@@ -59,7 +59,7 @@
 | **9.　個人化環境備份** | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
 | **10.　鏡像快照** | _[Clonezilla](./docs/offline_image_deployment.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
 |   |   |   |
-| **⭐ 災難復原** | _還原鏡像_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
+| **⭐ 災難復原** | _鏡像還原_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
 | **⭐ 密鑰管理器** | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼（Master Password）+<br>BitLocker 密鑰復原檔（Recovery Key）_ |
 | **⭐ 多元檔案管理器** | _Cryptomator_ | _地/雲端 ( 雙向同步/鏡像 ) + 加密資料夾_ |
 

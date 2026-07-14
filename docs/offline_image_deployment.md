@@ -25,8 +25,8 @@
   * [ ] 3 在 Rufus 中選擇下載好的 Clonezilla ISO 檔，點擊 `執行` 進行燒錄
   * [ ] 4 燒錄完成後，這支隨身碟即為 Clonezilla 啟動碟
 
-  ![PNG](../assets/clonezilla_00.png)
-  ![PNG](../assets/clonezilla_01.png)
+  ![PNG](../assets/Clonezilla_00.png)
+  ![PNG](../assets/Clonezilla_01.png)
 
 <br>
 
