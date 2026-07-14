@@ -49,38 +49,69 @@ Remove-Item "$env:TEMP\Winget.msixbundle" -ErrorAction SilentlyContinue
 ### *C.　⭐ 一鍵安裝應用*
 ```powershell
 # Admin
-winget import -i packages/v2/admin_winget.json --accept-package-agreements --accept-source-agreements
+winget import -i packages/v2/admin_winget.json --accept-package-agreements --accept-source-agreements --disable-interactivity
 
 # User ( 指令會自動偵測 + 補齊未繼承 admin 應用 )
-winget import -i packages/v2/admin_winget.json --accept-package-agreements --accept-source-agreements
-winget import -i packages/v2/user_winget.json --accept-package-agreements --accept-source-agreements
+winget import -i packages/v2/admin_winget.json --accept-package-agreements --accept-source-agreements --disable-interactivity
+winget import -i packages/v2/user_winget.json --accept-package-agreements --accept-source-agreements --disable-interactivity
 ```
 
 <br>
 
 ### *D.　其他*
 ```powershell
+⭐ 清理快取
+    # 開啟 winget 的暫存日誌與快取目錄
+    ( 將該資料夾內的所有日誌檔與 Downloads 資料夾內的快取安裝包直接全選刪除 )
+      winget --logs
+    
+    # 清除個別軟體安裝時的殘留
+      - 清除當前使用者暫存快取
+      Remove-Item -Path "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue
+    
+      - 清除系統全域暫存快取（必須是系統管理員權限）
+      Remove-Item -Path "C:\Windows\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+      
+    # 以管理員身分在背景自動執行最深度的磁碟清理
+      cleanmgr /sagerun:1
+    
+
+
 # 啟用跳過 Hash 的功能開關
     - 1. 啟用功能
     winget settings --enable InstallerHashOverride
     - 2. 再次嘗試安裝 (ex: Logitech.GHUB)
-    winget install Logitech.GHUB --ignore-security-hash
-    
+    winget install Logitech.GHUB -e --ignore-security-hash
 
-# 部分應用不需要管理員權限 所以噴錯
-winget install Canonical.Ubuntu.2404 --scope user
-winget install Microsoft.VisualStudioCode --scope user
-winget install thomasnordquist.MQTT-Explorer --scope user
-winget install GeekUninstaller.GeekUninstaller --scope user
-winget install PixPin.PixPin --scope machine
-winget install Rufus.Rufus --scope user
-winget install liule.Snipaste --scope user
-winget install Microsoft.PowerToys --scope user
-winget install Microsoft.Sysinternals.Suite --scope user
-winget install NickeManarin.ScreenToGif --scope user
-winget install xanderfrangos.twinkletray --scope user
-winget install Discord.Discord --scope user
-winget install Telegram.TelegramDesktop --scope user
+
+:: -e 精準搜索 ( 不加上會模糊搜尋 )
+:: --scope machine (強制全機安裝以確保權限)
+:: --scope user (侷限當前使用者)
+
+
+
+# 1. 系統/核心與開發工具
+winget install Canonical.Ubuntu.2404 -e --scope machine
+winget install Microsoft.VisualStudioCode -e --scope machine
+winget install Microsoft.PowerToys -e --scope machine
+winget install Microsoft.Sysinternals.Suite -e --scope machine
+
+# 2. 系統維護與實用工具
+winget install GeekUninstaller.GeekUninstaller -e --scope machine
+winget install Rufus.Rufus -e --scope machine
+winget install thomasnordquist.MQTT-Explorer -e --scope machine
+winget install NickeManarin.ScreenToGif -e --scope machine
+winget install xanderfrangos.twinkletray -e --scope machine
+
+# 3. 截圖與影音工具
+winget install PixPin.PixPin -e --scope machine
+winget install ErrorFlynn.ytdlp-interface -e
+winget install ffmpeg -e --scope machine
+# winget install liule.Snipaste -e --scope machine
+
+# 4. 通訊軟體
+winget install Discord.Discord -e --scope user
+winget install Telegram.TelegramDesktop -e --scope user
 ```
 
 

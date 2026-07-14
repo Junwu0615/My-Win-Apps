@@ -7,7 +7,9 @@
         { "PackageIdentifier": "Telegram.TelegramDesktop" },
         { "PackageIdentifier": "Discord.Discord" },
         { "PackageIdentifier": "Microsoft.Teams" },
-        { "PackageIdentifier": "Zoom.Zoom" }
+        { "PackageIdentifier": "Zoom.Zoom" },
+        { "PackageIdentifier": "Rufus.Rufus" },
+        { "PackageIdentifier": "ErrorFlynn.ytdlp-interface" }
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",

@@ -34,8 +34,8 @@
   
 - #### *⭐ [ 實用的工具 ]*
   - #### *瀏覽器連結辨識插件 : [Malwarebytes Browser Guard](https://chromewebstore.google.com/detail/malwarebytes-browser-guar/ihcjicgdanjaechkgeegckofjjedodee?hl=zh-TW&utm_source=ext_sidebar)* 
-  - #### *[VirusTotal](https://www.virustotal.com/) ( 這是業界標準，會同時調用超過 70 種防毒引擎與網址黑名單服務，提供最全面的風險評估 )*
-  - #### *[URLScan.io](https://urlscan.io/) ( 它會模擬瀏覽器去「訪問」該網址，並顯示網頁截圖與行為分析。適合用來檢查網頁是否有隱藏的惡意腳本、釣魚偽裝或惡意重新導向 )*
+  - #### *[VirusTotal](https://www.virustotal.com/) ( 業界標準，會同時調用超過 70 種防毒引擎<br>與網址黑名單服務，提供最全面的風險評估 )*
+  - #### *[URLScan.io](https://urlscan.io/) ( 它會模擬瀏覽器去「訪問」該網址，並顯示網頁截圖與行為分析。<br>適合用來檢查網頁是否有隱藏的惡意腳本、釣魚偽裝或惡意重新導向 )*
 
 <br>
 
@@ -57,12 +57,12 @@
 
 <br>
 
+
+
+
 ### *日常應用*
 - #### *社群軟體*
   - #### *[Line](https://www.line.me/tw/)*
-
-- #### *模擬器*
-  - #### *[Bluestacks](https://www.bluestacks.com/download.html)*
 
 - #### *翻譯工具*
   - #### *QTranslate ( 安全度不夠 )*
@@ -72,13 +72,28 @@
   - #### *[SurfShark](https://surfshark.com/zh-tw)*
 
 - #### *下載器*
-  - #### *[By Click Downloader ( YT Download )](https://www.byclickdownloader.com/zh/)*
+  - #### *[By Click Downloader ( YT )](https://www.byclickdownloader.com/zh/)*
+  - #### *ytdlp-interface ( YT 開源下載神器 By Winget )*
   - #### *[MEGA Downloader](https://www.azofreeware.com/2013/05/megadownloader-081-beta-mega.html)*
+
+<br>
+
+
+### *娛樂應用*
+- #### *模擬器*
+  - #### *[Bluestacks](https://www.bluestacks.com/download.html)*
+- #### *[tinytask ( 腳本精靈 )](https://www.tinytask.net/)*
 
 <br>
 
 ### *裝置應用 & 驅動*
 - #### *[AVerMedia Assist Central ( Camera Device Tools )](https://www.avermedia.com/tw/support/download/assist-central)*
+
+<br>
+
+### *剪輯應用*
+- #### *[DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve)*
+- #### *[Shutter Encoder](https://www.shutterencoder.com/)*
 
 <br>
 
@@ -91,9 +106,5 @@
     # 安裝 Scoop
     irm get.scoop.sh | iex
     ```
-
-- #### *[tinytask ( 腳本精靈 )](https://www.tinytask.net/)*
-- #### *[DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve)*
-- #### *[Shutter Encoder](https://www.shutterencoder.com/)*
 - #### *Win RAR ( 棄用 )*
 - #### *Adobe Acrobat DC ( 棄用 )*
