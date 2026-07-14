@@ -82,18 +82,18 @@
 ### *C.　Anti-poisoning Habits*
 ```
 [ 主力防禦 ]
-- 保持 Windows Defender 開啟
+ - 保持 Windows Defender 開啟
 
 [ 核心習慣 ]
-- 不下載來路不明的破解軟體（ KMS、遊戲外掛、點選「信任」的未知巨集 ）
-- 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
-- 不用瀏覽器不合規插件 + cookie 密碼管理
-- 統一用 Bitwarden 管理大部分密鑰 + 2FA ( 註: 冷儲存不能少 )
+ - 不下載來路不明的破解軟體（ KMS、遊戲外掛、點選「信任」的未知巨集 ）
+ - 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
+ - 不用瀏覽器不合規插件 + cookie 密碼管理
+ - 統一用 Bitwarden 管理大部分密鑰 + 2FA ( 註: 冷儲存不能少 )
 
 [ 定期掃除 ]
-- 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
-- 執行 Malwarebytes 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
-- 執行 ESET Online Scanner 掃描
+ - 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
+ - 執行 Malwarebytes 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
+ - 執行 ESET Online Scanner 掃描
 ```
 
 <br><br>
