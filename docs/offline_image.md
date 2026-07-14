@@ -31,6 +31,7 @@
   * [ ] 2 插上隨身碟，開啟工具 _**[Rufus 燒錄軟體](https://rufus.ie/zh_TW/)**_
   * [ ] 3 在 Rufus 中選擇下載好的 Clonezilla ISO 檔，點擊 `執行` 進行燒錄
   * [ ] 4 燒錄完成後，這支隨身碟即為 Clonezilla 啟動碟
+  * [ ] 5 直接在根目錄創建檔案夾 _**Win11_Clean_Backup**_
   
   - #### *Example 1*
     ![PNG](../assets/Clonezilla_00.png)
@@ -47,9 +48,14 @@
   * [ ] 4 進入選單後選擇 **`Clonezilla live`** ➔ 語言選擇 **`正體中文`** ➔ **`不要修改鍵盤對應`**
   * [ ] 5 選擇 **`device-image（使用映像檔）`** ➔ 選擇 **`local_dev（使用本機儲存裝置）`**
   * [ ] 6 系統會要求選擇`備份檔存放位置`，此時選擇 **`隨身碟`**，並選定資料夾
-  * [ ] 7 模式選擇 **`Expert (-sfs)`** ➔ 選擇 **`savedisk（儲存整顆硬碟為映像檔 ➔ 選擇分割（4000MB 一個檔案）`**
+  * [ ] 7 模式選擇 **`Expert (no fsck / -q2 / -sfs)`** ➔ 選擇 **`savedisk（儲存整顆硬碟為映像檔 ➔ 選擇分割（4000MB 一個檔案）`**
   * [ ] 8 輸入備份檔名 **`Win11_Clean_Backup`**，接著一路按 Enter 接受預設，最後輸入 **`y`** 確認，系統就會開始跑進度條備份
   * [ ] 9 創建鏡像完成後，重新進入系統回歸正常使用，手動執行 **`manage-bde -on C:`**<br>**`重啟前（務必耐心等待狀態顯示已解鎖: manage-bde -status C:）`**，確保 TPM 安全綁定重新建立
+
+  ```
+  # 退出再生龍 : Ctrl + Alt + Del
+  # 遇到一致性問題 ( 重新啟動電腦 ) : chkdsk C: /f /r  ➔  restart-computer
+  ```
 
 <br>
 
