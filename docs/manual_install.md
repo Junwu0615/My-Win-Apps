@@ -30,9 +30,10 @@
            然後在沙盒裡按 Ctrl+V，這個動作只是「搬移資料」，病毒並未開始運作
   ```
   
-- #### *[ 實用的工具 ]*
+- #### *⭐ [ 實用的工具 ]*
   - #### *[瀏覽器連結辨識插件 : Malwarebytes Browser Guard](https://chromewebstore.google.com/detail/malwarebytes-browser-guar/ihcjicgdanjaechkgeegckofjjedodee?hl=zh-TW&utm_source=ext_sidebar)* 
-  - #### *[將檔案丟至 VirusTotal，讓全球 70 幾家防毒引擎幫你同步健檢](https://www.virustotal.com/gui/home/upload)*
+  - #### *[VirusTotal](https://www.virustotal.com/) ( 這是業界標準，會同時調用超過 70 種防毒引擎與網址黑名單服務，提供最全面的風險評估 )*
+  - #### *[URLScan.io](https://urlscan.io/) ( 它會模擬瀏覽器去「訪問」該網址，並顯示網頁截圖與行為分析。適合用來檢查網頁是否有隱藏的惡意腳本、釣魚偽裝或惡意重新導向 )*
 
 <br>
 
