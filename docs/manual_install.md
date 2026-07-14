@@ -28,22 +28,29 @@
     安全狀態 ： 複製貼上是安全的，直到你「雙擊執行」它
     原理 ： 病毒檔案就像一顆還沒拔掉插銷的手榴彈。如果只是用滑鼠對著它按 Ctrl+C、
            然後在沙盒裡按 Ctrl+V，這個動作只是「搬移資料」，病毒並未開始運作
+  
+  - 更進階用法好像是預先裝設測試工具 ... 之類 ( .wsb )
   ```
   
 - #### *⭐ [ 實用的工具 ]*
-  - #### *[瀏覽器連結辨識插件 : Malwarebytes Browser Guard](https://chromewebstore.google.com/detail/malwarebytes-browser-guar/ihcjicgdanjaechkgeegckofjjedodee?hl=zh-TW&utm_source=ext_sidebar)* 
+  - #### *瀏覽器連結辨識插件 : [Malwarebytes Browser Guard](https://chromewebstore.google.com/detail/malwarebytes-browser-guar/ihcjicgdanjaechkgeegckofjjedodee?hl=zh-TW&utm_source=ext_sidebar)* 
   - #### *[VirusTotal](https://www.virustotal.com/) ( 這是業界標準，會同時調用超過 70 種防毒引擎與網址黑名單服務，提供最全面的風險評估 )*
   - #### *[URLScan.io](https://urlscan.io/) ( 它會模擬瀏覽器去「訪問」該網址，並顯示網頁截圖與行為分析。適合用來檢查網頁是否有隱藏的惡意腳本、釣魚偽裝或惡意重新導向 )*
 
 <br>
 
-### *密鑰管理器*
+### *密鑰管理器 ( 擇一 )*
 - #### *⭐ [Bitwarden](https://bitwarden.com/)*
 - #### *[Kaspersky Password Manager](https://www.kaspersky.com.tw/)*
 
 <br>
 
-### *開發應用*
+### *多元檔案管理器 ( 擇一 )*
+- #### *⭐ [Cryptomator](https://cryptomator.org/)*
+
+<br>
+
+### *開發應用 ( 註: 不汙染系統環境路徑 )*
 - #### *[Python 3.14.6](https://www.python.org/downloads/release/python-3146/)*
 - #### *[Python 3.13.14](https://www.python.org/downloads/release/python-31314/)*
 - #### *[Python 3.12.10](https://www.python.org/downloads/release/python-31210/)*
