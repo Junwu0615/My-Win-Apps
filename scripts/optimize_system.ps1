@@ -1,4 +1,4 @@
-# 檢查是否以管理員身分執行
+﻿# 檢查是否以管理員身分執行
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if (!($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))) {
     Write-Error "錯誤： 此腳本必須以「系統管理員身分」執行！請對 PowerShell 按右鍵選擇「以系統管理員身分執行」"
@@ -17,8 +17,8 @@ Start-Service -Name wuauserv
 Start-Service -Name bits
 
 # 2. 關閉休眠 (釋放磁碟空間)
-Write-Host "[2] 停用休眠功能 ..." -ForegroundColor Yellow
-powercfg -h off
+# Write-Host "[2] 停用休眠功能 ..." -ForegroundColor Yellow
+# powercfg -h off
 
 
 # 3. 啟用 CompactOS (強制壓縮)
