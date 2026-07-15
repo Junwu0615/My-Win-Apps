@@ -100,8 +100,6 @@ manage-bde -protectors -delete C: -id "{刪除舊識別碼}"
 <br>
 
 ### *D.　外接硬碟加密*
-```
-Coming soon
-```
+- #### *Coming soon ...*
 
 <br><br>
