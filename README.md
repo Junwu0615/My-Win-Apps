@@ -44,6 +44,7 @@
 │
 ├─── .editorconfig
 ├─── .gitignore
+├─── .version
 ├─── LICENSE
 └─── README.md
 ```
