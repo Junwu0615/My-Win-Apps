@@ -58,9 +58,13 @@
 <br>
 
 
-
-
 ### *日常應用*
+- #### *Could*
+  - #### *[GoogleDriveSetup.exe](https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe)*
+
+- #### *Office*
+  - #### *[Trio Office : DOCX & XLSX Editor](https://apps.microsoft.com/detail/9P9F6DZJBBLJ?hl=zh-tw&gl=TW&ocid=pdpshare)*
+
 - #### *社群軟體*
   - #### *[Line](https://www.line.me/tw/)*
 
