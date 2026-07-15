@@ -11,6 +11,7 @@
   - 複製開始功能表的配置資料庫
     Copy-Item -Path "$env:LocalAppData\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState" -Destination "D:\Win11StartLayout" -Recurse -Force
 
+
 # 匯入設定
   - 將備份的配置還原回系統路徑
     Copy-Item -Path "D:\Win11StartLayout\LocalState\*" -Destination "$env:LocalAppData\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState" -Recurse -Force

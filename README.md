@@ -64,7 +64,7 @@
 | _**7.　User 應用建置**_ | _[User Winget](./docs/winget.md)_ | _透過 Git 管理，隨時可在新電腦部署開發應用_ |
 | _**8.　手動安裝指定應用**_ | _[Manual Install](./docs/manual_install.md)_ | _應用程式因授權保護或軟體特殊性，需手動安裝或授權_ |
 | _**9.　個人化環境備份**_ | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
-| _**10.　鏡像快照**_ | _[Clonezilla](./docs/offline_image.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
+| _**10.　鏡像快照**_ | _[Offline Image](./docs/offline_image.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
 |   |   |   |
 | _**⭐ 災難復原**_ | _鏡像還原_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
 | _**⭐ 密鑰管理器**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |

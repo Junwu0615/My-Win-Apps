@@ -28,7 +28,7 @@ Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out
 
 ### *C.　[參照 Chocolatey 官方網站 ➔ 搜尋對應名稱](https://community.chocolatey.org/packages)*
 ```
-[1] 將系統所需應用 依照官方網站 搜尋對應名稱 ( 軟體 id )
+[1] 將系統所需應用 依照官方網站 搜尋對應名稱 (軟體 id)
 [2-1] 填入 ./packages/v1/admin.config
 [2-2] 填入 ./packages/v1/user.config
 ```
@@ -46,7 +46,7 @@ Get-Package | Select-Object Name, Version, ProviderName | Sort-Object Name | Out
   
 - #### *可能會遇到衝突 ...*
   ```powershell
-  # 若是網上載下來文件因信任問題 ( 未簽署 ) 而無法使用 ➔ 需先解鎖 ( 專案根目錄 )
+  # 若是網上載下來文件因信任問題 (未簽署) 而無法使用 ➔ 需先解鎖 (專案根目錄)
   Get-ChildItem -Recurse | Unblock-File
   
   # 若是遇到解析問題 另存新檔為 BOM-UTF8 格式

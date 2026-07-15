@@ -21,7 +21,7 @@ Write-Host "正在下載 Winget 安裝包..." -ForegroundColor Cyan
 Invoke-WebRequest -Uri $URL_VCLibs -OutFile "$env:TEMP\VCLibs.appx"
 Invoke-WebRequest -Uri $URL_Winget -OutFile "$env:TEMP\Winget.msixbundle"
 
-# 2. 強制安裝相依套件與 Winget ( 可能非必要 )
+# 2. 強制安裝相依套件與 Winget (可能非必要)
 Write-Host "正在安裝/修復 Winget..." -ForegroundColor Cyan
 Add-AppxPackage -Path "$env:TEMP\VCLibs.appx" -ErrorAction SilentlyContinue
 Add-AppxPackage -Path "$env:TEMP\Winget.msixbundle"
@@ -39,7 +39,7 @@ Remove-Item "$env:TEMP\Winget.msixbundle" -ErrorAction SilentlyContinue
 
 ### *B.　[查找 Winget 支援應用](https://winstall.app/)*
 ```
-[1] 將系統所需應用 依照官方網站 搜尋對應名稱 ( 軟體 id )
+[1] 將系統所需應用 依照官方網站 搜尋對應名稱 (軟體 id)
 [2-1] 填入 ./packages/v2/admin_winget.json
 [2-2] 填入 ./packages/v2/user_winget.json
 ```
@@ -76,7 +76,6 @@ winget import -i packages/v2/user_winget.json --accept-package-agreements --acce
       cleanmgr /sagerun:1
     
 
-
 # 啟用跳過 Hash 的功能開關
     - 1. 啟用功能
     winget settings --enable InstallerHashOverride
@@ -84,10 +83,9 @@ winget import -i packages/v2/user_winget.json --accept-package-agreements --acce
     winget install Logitech.GHUB -e --ignore-security-hash
 
 
-:: -e 精準搜索 ( 不加上會模糊搜尋 )
+:: -e 精準搜索 (不加上會模糊搜尋)
 :: --scope machine (強制全機安裝以確保權限)
 :: --scope user (侷限當前使用者)
-
 
 
 # 1. 系統/核心與開發工具
