@@ -1,5 +1,4 @@
 ## *⭐ Developer Experience ⭐*
-> #### *System : Windows 11*
 
 <br>
 
