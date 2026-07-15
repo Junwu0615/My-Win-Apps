@@ -8,7 +8,7 @@
   - #### *做 Clonezilla 開機碟 ( 啟動隨身碟 ➔ To-RAM )*
   - #### *儲存備份出來的映像檔資料夾 ( 兼存放映像檔 )*
   - #### *容量至少 225GB*
-  - #### *格式化 ( NTFS )*
+  - #### *無須手動先格式化 直接交由燒錄軟體*
 
 - #### *~~2. Rufus 燒錄軟體~~*
 - #### *⭐ 2. Ventoy 燒錄軟體 ( 能分區 exFAT 開機 + NTFS 儲存 )*
@@ -30,15 +30,15 @@
   > ⚠️ **注意：此步驟會格式化隨身碟，請先備份隨身碟內資料**
   * [ ] 1 到官網下載 _**[Clonezilla 穩定發行版](https://clonezilla.nchc.org.tw/clonezilla-live/download/)**_ 的 ISO 映像檔
   * [ ] ~~2 插上隨身碟，開啟工具 _**[Rufus 燒錄軟體](https://apps.microsoft.com/detail/9PC3H3V7Q9CH?hl=zh-tw&gl=TW&ocid=pdpshare)**_~~
-  * [ ] 2 插上隨身碟，開啟工具 _**[Ventoy 燒錄軟體](https://www.ventoy.net/en/download.html)**_
-  * [ ] 3 在 Rufus 中選擇下載好的 Clonezilla ISO 檔，點擊 `執行` 進行燒錄
-  * [ ] 4 燒錄完成後，這支隨身碟即為 Clonezilla 啟動碟
-  * [ ] 5 直接在根目錄創建檔案夾 _**Win11_Clean_Backup**_
+  * [ ] 2 插上隨身碟，開啟工具 _**[Ventoy2Disk.exe](https://www.ventoy.net/en/download.html)**_
+  * [ ] ~~3 在 Rufus 中選擇下載好的 Clonezilla ISO 檔，點擊 `執行` 進行燒錄~~
+  * [ ] 3 將下載好的 Clonezilla ISO 檔，直接放入該剩餘空間 ( 保留 2GB 即可 )
+  * [ ] 4 上述都完成後，該支隨身碟即為 Clonezilla 啟動碟
   
-  - #### *Example 1*
-    ![PNG](../assets/Clonezilla_00.png)
-  - #### *Example 1*
-    ![PNG](../assets/Clonezilla_01.png)
+[//]: # (  - #### *Example 1*)
+[//]: # (    ![PNG]&#40;../assets/Clonezilla_00.png&#41;)
+[//]: # (  - #### *Example 1*)
+[//]: # (    ![PNG]&#40;../assets/Clonezilla_01.png&#41;)
 
 <br>
 
@@ -46,21 +46,29 @@
   > 💡 準備動作：插上啟動隨身碟 + 重啟電腦 + 離線備份原則 ( 拔除網路線 )
   * [ ] 1 先行解密系統碟： **`./scripts/disable_c_bit_locker.ps1`**
   * [ ] 2 在進入 Clonezilla 前，務必執行 **`manage-bde -status C:`**，確認狀態為 **`已解除保護（Fully Decrypted）`**
-  * [ ] 3 開機時按 F12（或 Del/F11）進入 Boot Menu，選擇由**隨身碟開機**
+  * [ ] 3 開機時按 F12（或 Del/F11 或`設定` `系統` `復原` `進階啟動` ）進入 Boot Menu，選擇由**隨身碟開機**
   * [ ] 4 進入選單後選擇 **`Clonezilla live ( VGA 800x600 & To RAM )`** ➔ 語言選擇 **`正體中文`** ➔ **`不要修改鍵盤對應`**
   * [ ] 5 選擇 **`device-image（使用映像檔）`** ➔ 選擇 **`local_dev（使用本機儲存裝置）`**
   * [ ] 6 系統會要求選擇`備份檔存放位置`，此時選擇 **`隨身碟`**，並選定資料夾
-  * [ ] 7 模式選擇 **`Expert (-no-fsck / -q2 / -sfs)`** ➔ 選擇 **`savedisk（儲存整顆硬碟為映像檔 ➔ 選擇分割（4000MB 一個檔案）`**
-  * [ ] 8 輸入備份檔名 **`Win11_Clean_Backup`**，接著一路按 Enter 接受預設，最後輸入 **`y`** 確認，系統就會開始跑進度條備份
+  * [ ] 7 模式選擇 **`Expert (參考底下選填參數)`** ➔ 選擇 **`partdisk（儲存整顆硬碟為映像檔 ➔ 選擇分割（4000MB 一個檔案）`**
+  * [ ] 8 輸入備份檔名 **`Win11_Clean_Backup (若無建立 則先用再生龍的命令列建立)`**，接著一路按 Enter 接受預設，最後輸入 **`y`** 確認，系統就會開始跑進度條備份
   * [ ] 9 創建鏡像完成後，重新進入系統回歸正常使用，手動執行 **`manage-bde -on C:`**<br>**`重啟前（務必耐心等待狀態顯示已解鎖: manage-bde -status C:）`**，確保 TPM 安全綁定重新建立
 
   ```
   # 退出再生龍 : Ctrl + Alt + Del
   # 遇到一致性問題 ( 重新啟動電腦 ) : chkdsk C: /f /r  ➔  restart-computer
   # 中斷進度 : Ctrl + C
-  # 不勾選參數 -rescue 會導致進度慢到像停滯
-  # 加速模式選擇 : -z1p
-  # 其他 : -icds
+  
+  
+  # -i : 檢查剛備份完的映像檔是否完整
+  # -no-fsck : 略過不檢查分割曲一致性 ( 全部完成後再一次性驗證 )
+  # -sfs : ???
+  # -q2 : 使用 Partclone (處理 NTFS 最穩)
+  # -icds : 能避開因分區表微小差異導致的檔案毀損
+  # -rescue : 不勾選 會導致進度慢到像停滯
+  # 加速模式選擇 :
+    - 優先 z0 ( 不壓縮 )
+    - 次選 z1p
   ```
 
 <br>
