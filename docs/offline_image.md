@@ -4,16 +4,16 @@
 <br>
 
 ### *A.　⭐ 事前準備*
-- #### *1. 大容量空白隨身碟*
+- #### *1.　大容量空白隨身碟*
   - #### *建立 Clonezilla 開機碟 ( 啟動隨身碟 ➔ To-RAM )*
   - #### *建立 儲存備份出來的映像檔資料夾 ( 兼存放映像檔 )*
   - #### *容量至少 225GB ( 視當前系統碟大小而定 )*
   - #### *無須手動格式化*
 
-- #### *⭐ 2. Ventoy 分區軟體 ➔ 分區 [ exFAT 開機 ] + [ NTFS 儲存 ]*
+- #### *2.　Ventoy 分區軟體 ➔ 分區 [ exFAT 開機 ] + [ NTFS 儲存 ]*
   - #### *將 Clonezilla ISO 檔複製到隨身碟*
 
-- #### *3. 鏡像前系統瘦身*
+- #### *3.　鏡像前系統瘦身*
   ```
   # 清理系統元件 (WinSxS): 掃描並清除被取代的 Windows 元件 (此動作不可逆，清理完後無法解除安裝過往更新)
   dism /online /cleanup-image /startcomponentcleanup /resetbase
@@ -25,7 +25,7 @@
 <br>
 
 ### *B.　操作手冊*
-- #### *1. 製作啟動隨身碟 ( Rescue Media )*
+- #### *1.　製作啟動隨身碟 ( Rescue Media )*
   > ⚠️ **注意：此步驟會格式化隨身碟，請先備份隨身碟內資料**
   * [x] 1 官網下載 _**[Clonezilla 穩定發行版 ISO 映像檔](https://clonezilla.nchc.org.tw/clonezilla-live/download/)**_
   * [x] 2 插上隨身碟，開啟工具 _**[Ventoy2Disk.exe](https://www.ventoy.net/en/download.html)**_ 進行分區切割
@@ -42,7 +42,7 @@
 
 <br>
 
-- #### *2. 創建鏡像 ( 備份系統碟 )*
+- #### *2.　創建鏡像 ( 備份系統碟 )*
   > 💡 準備動作：插上啟動隨身碟 + 重啟電腦 + 離線備份原則 ( 拔除網路線 )
   * [x] 1 先行解密系統碟： **`./scripts/disable_c_bit_locker.ps1`**
   * [x] 2 進入 Clonezilla 前，務必執行 **`manage-bde -status C:`**，確認狀態為 **`已解除保護（Fully Decrypted）`**
@@ -83,7 +83,7 @@
 
 <br>
 
-- #### *3. 還原鏡像 ( 災難發生 )*
+- #### *3.　還原鏡像 ( 災難發生 )*
   > 💡 準備動作：同樣用隨身碟開機引導 (選擇 To-RAM 選擇同時存放其中的映像檔)
   * [ ] 1 重複上述的步驟（創建鏡像）`3` 到 `6`，讓 Clonezilla 掛載 **`隨身碟`**
   * [ ] 2 進入模式時選 **`Beginner 初學模式`**，但改選 **`restoredisk（還原映像檔到本機硬碟 # 用容量大小識別 否則洗到資料碟 你會哭死）`**
