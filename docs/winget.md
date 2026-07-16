@@ -82,6 +82,8 @@ winget import -i packages/v2/user_winget.json --accept-package-agreements --acce
     - 2. 再次嘗試安裝 (ex: Logitech.GHUB)
     winget install Logitech.GHUB -e --ignore-security-hash
 
+# 查找軟體 id (ex: "Windows Update Blocker")
+winget search "Windows Update Blocker"
 
 :: -e 精準搜索 (不加上會模糊搜尋)
 :: --scope machine (強制全機安裝以確保權限)
@@ -110,6 +112,9 @@ winget install ffmpeg -e --scope machine
 # 4. 通訊軟體
 winget install Discord.Discord -e --scope user
 winget install Telegram.TelegramDesktop -e --scope user
+
+# 5. 禁止自動更新系統 (Windows Update Blocker) # 無效
+winget install sordum.WindowsUpdateBlocker -e --ignore-security-hash
 ```
 
 
