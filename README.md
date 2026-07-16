@@ -40,6 +40,8 @@
 │   ├─── disable_c_bit_locker.ps1
 │   ├─── fix_encoding.ps1
 │   ├─── random_secret.ps1
+│   ├─── freeze_win_update.ps1
+│   ├─── unfreeze_win_update.ps1
 │   └─── optimize_system.ps1
 │
 ├─── .editorconfig
