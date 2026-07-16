@@ -76,8 +76,9 @@
   - #### *[SurfShark](https://surfshark.com/zh-tw)*
 
 - #### *下載器*
-  - #### *[By Click Downloader ( YT )](https://www.byclickdownloader.com/zh/)*
-  - #### *ytdlp-interface ( YT 開源下載神器 By Winget )*
+  - #### *[By Click Downloader ( YT 下載器 )](https://www.byclickdownloader.com/zh/)*
+  - #### *[YT 開源下載神器 : ytdlp-interface](https://github.com/Junwu0615/My-Win-Apps/blob/main/docs/winget.md#d%E5%85%B6%E4%BB%96)*
+    - #### *[匯出 cookie 工具 : Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/cclelndahbckbenkjhflpdbgdldlbecc?utm_source=item-share-cb)*
   - #### *[MEGA Downloader](https://www.azofreeware.com/2013/05/megadownloader-081-beta-mega.html)*
 
 <br>
