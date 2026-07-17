@@ -45,6 +45,13 @@
 
 <br>
 
+### *2FA ( 擇一 )*
+- #### *[Google Authenticator ](https://apps.apple.com/tw/app/google-authenticator/id388497605)*
+- #### *⭐ [KeePassXC](https://keepassxc.org/)*
+- #### *⭐ [Microsoft Authenticator](https://www.microsoft.com/zh-tw/security/mobile-authenticator-app)*
+
+<br>
+
 ### *多元檔案管理器 ( 擇一 )*
 - #### *⭐ [Cryptomator](https://cryptomator.org/)*
 
