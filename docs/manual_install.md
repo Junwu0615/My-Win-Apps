@@ -70,6 +70,7 @@
 ### *日常應用*
 - #### *Could*
   - #### *[GoogleDriveSetup.exe](https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe)*
+  - #### *[Apple iCloud](https://apps.microsoft.com/detail/9PKTQ5699M62?hl=zh-tw&gl=TW&ocid=pdpshare)*
 
 - #### *Office*
   - #### *[Trio Office : DOCX & XLSX Editor](https://apps.microsoft.com/detail/9P9F6DZJBBLJ?hl=zh-tw&gl=TW&ocid=pdpshare)*
