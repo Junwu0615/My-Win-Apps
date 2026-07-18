@@ -1,4 +1,8 @@
-## *⭐ My-Win-Apps ⭐*
+## *🛡️ My Win Apps & Security Architecture*
+
+> **SECURITY WARNING :** 本倉庫包含個人工具配置與資安防禦架構。
+> 本專案中所有涉及密碼、金鑰、備援碼的路徑與內容皆為 **示意與架構範例**。
+> **嚴禁**將包含真實機密資料的 `.kdbx`、`cryptomator` 設定檔或 PDF 提交至此倉庫。
 
 <br>
 
