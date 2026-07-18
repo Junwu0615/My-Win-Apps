@@ -9,14 +9,16 @@
 
 ```bash
 .
-├─── assets
+├─── assets (PNG)
 ├─── docs
+│   ├─── 2FA.md
 │   ├─── bitlocker.md
 │   ├─── chocolatey.md
 │   ├─── defense_in_depth.md
 │   ├─── dev_experience.md
 │   ├─── manual_install.md
 │   ├─── offline_image.md
+│   ├─── usually.md
 │   └─── winget.md
 │
 ├─── configs
@@ -72,42 +74,43 @@
 | _**⭐ 災難復原**_ | _鏡像還原_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
 | _**⭐ 密鑰管理器**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |
 | _**⭐ 多元檔案管理器**_ | _Cryptomator_ | _地/雲端 ( 雙向同步/鏡像 ) + 加密資料夾_ |
+| _**⭐ 3-2-1 備份原則**_ | _[Document](./docs/2FA.md)_ | _三份資料、兩種媒介、一份異地_ |
 
 <br>
 
 ### *B.　Windows Account Creation*
 ```
-[1] Account A： Administrator ( 系統管理員 )
-    帳號用途： 負責底層與全域工具 ( 僅用於安裝驅動程式、系統更新、執行會修改系統核心的腳本 )
-    保持習慣： 平時不用此帳號上網，也不把它當作日常帳號
+•　[ Account A ] Administrator ( 系統管理員 )
+   - 帳號用途： 負責底層與全域工具 ( 僅用於安裝驅動程式、系統更新、執行會修改系統核心的腳本 )
+   - 保持習慣： 平時不用此帳號上網，也不把它當作日常帳號
 
-[2] Account B： UserName ( 標準使用者 )
-    帳號用途： 負責應用程式與個人化環境 ( 日常開發、娛樂、瀏覽網頁 ...等 )
-    強化防禦： 因為不是管理員，病毒若想寫入 C:\Windows 或修改系統註冊表，
-              會直接被 UAC ( 使用者帳戶控制 ) 擋下，必須輸入密碼才能進行。
-              能有效防止勒索軟體在背景自動加密系統檔案
+•　[ Account B ] UserName ( 標準使用者 )
+   - 帳號用途： 負責應用程式與個人化環境 ( 日常開發、娛樂、瀏覽網頁 ...等 )
+   - 強化防禦： 因為不是管理員，病毒若想寫入 C:\Windows 或修改系統註冊表，
+               會直接被 UAC ( 使用者帳戶控制 ) 擋下，必須輸入密碼才能進行。
+               能有效防止勒索軟體在背景自動加密系統檔案
 ```
 
 <br>
 
 ### *C.　Anti-poisoning Habits*
 ```
-[ 主力防禦 ]
- - 保持 Windows Defender 開啟
+•　[ 主力防禦 ]
+   - 保持 Windows Defender 開啟
 
-[ 核心習慣 ]
- - 不下載來路不明的破解軟體（ KMS、遊戲外掛、點選「信任」的未知巨集 ）
- - 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
- - 不用瀏覽器不合規插件 + cookie 密碼管理
- - 統一用 Bitwarden 管理大部分密鑰 + 2FA ( 註: 冷儲存不能少 )
- - 敏感資訊用匿名瀏覽器或獨立瀏覽器 ( 禁止外掛插件介入 )
-    - 日常瀏覽 Google Chrome
-    - 敏感瀏覽 Microsoft Edge
+•　[ 核心習慣 ]
+   - 不下載來路不明的破解軟體（ KMS、遊戲外掛、點選「信任」的未知巨集 ）
+   - 插上外來硬碟時，養成先右鍵用 Defender 掃描的習慣
+   - 不用瀏覽器不合規插件 + cookie 密碼管理
+   - 統一用 Bitwarden 管理大部分密鑰 + 2FA ( 註: 冷儲存不能少 )
+   - 敏感資訊用匿名瀏覽器或獨立瀏覽器 ( 禁止外掛插件介入 )
+     - 日常瀏覽 Google Chrome
+     - 敏感瀏覽 Microsoft Edge
 
-[ 定期掃除 ]
- - 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
- - 執行 Malwarebytes 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
- - 執行 ESET Online Scanner 掃描
+•　[ 定期掃除 ]
+   - 執行 KVRT 進行全機深層掃描（ 防範高危險病毒、勒索軟體 ）
+   - 執行 Malwarebytes 掃描（ 惡意彈窗廣告、流氓瀏覽器綁架、木馬程式 ）
+   - 執行 ESET Online Scanner 掃描
 ```
 
 <br><br>

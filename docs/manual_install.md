@@ -46,6 +46,7 @@
 <br>
 
 ### *2FA ( 擇一 )*
+> #### *延伸參考 : [個人機密 - 資安防護措施](./2FA)*
 - #### *[Google Authenticator ](https://apps.apple.com/tw/app/google-authenticator/id388497605)*
 - #### *⭐ [KeePassXC](https://keepassxc.org/)*
 - #### *⭐ [Microsoft Authenticator](https://www.microsoft.com/zh-tw/security/mobile-authenticator-app)*
