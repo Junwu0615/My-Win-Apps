@@ -73,19 +73,19 @@
 |   |   |   |
 | _**🔄 災難復原**_ | _鏡像還原_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
 |   |   |   |
-| _**🔒 密鑰管理器**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |
-| _**🔒 多元檔案管理器**_ | _Cryptomator_ | _地/雲端 ( 雙向同步/鏡像 ) + 加密資料夾_ |
-| _**🔒 3-2-1 備份原則**_ | _[Document](./docs/2FA.md)_ | _三份資料、兩種媒介、一份異地_ |
+| _**🔒 [ 加碼 ] 密鑰管理**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |
+| _**🔒 [ 加碼 ] 多元檔案管理**_ | _Cryptomator_ | _加密資料夾_ |
+| _**🔒 [ 加碼 ] 2FA 管理**_ | _[Document](./docs/2FA.md)_ | _3-2-1 備份原則 : 三份資料、兩種媒介、一份異地_ |
 
 <br>
 
 ### *B.　Windows Account Creation*
 ```
-•　[ Account A ] Administrator ( 系統管理員 )
+•　[ 系統管理員 ] Administrator
    - 帳號用途： 負責底層與全域工具 ( 僅用於安裝驅動程式、系統更新、執行會修改系統核心的腳本 )
    - 保持習慣： 平時不用此帳號上網，也不把它當作日常帳號
 
-•　[ Account B ] UserName ( 標準使用者 )
+•　[ 標準使用者 ] User
    - 帳號用途： 負責應用程式與個人化環境 ( 日常開發、娛樂、瀏覽網頁 ...等 )
    - 強化防禦： 因為不是管理員，病毒若想寫入 C:\Windows 或修改系統註冊表，
                會直接被 UAC ( 使用者帳戶控制 ) 擋下，必須輸入密碼才能進行。

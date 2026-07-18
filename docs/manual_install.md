@@ -45,7 +45,7 @@
 
 <br>
 
-### *2FA ( 擇一 )*
+### *2FA*
 > #### *延伸參考 : [個人機密 - 資安防護措施](./2FA.md)*
 - #### *[Google Authenticator ](https://apps.apple.com/tw/app/google-authenticator/id388497605)*
 - #### *⭐ [KeePassXC](https://keepassxc.org/)*
@@ -54,6 +54,7 @@
 <br>
 
 ### *多元檔案管理器 ( 擇一 )*
+> #### *各類多媒體包括但不限於 [ 影片 / 照片 / 音檔 ]*
 - #### *⭐ [Cryptomator](https://cryptomator.org/)*
 
 <br>
