@@ -71,10 +71,11 @@
 | _**9.　個人化環境備份**_ | _[Developer Experience](./docs/dev_experience.md)_ | _方便一鍵復原個人化環境_ |
 | _**10.　鏡像快照**_ | _[Offline Image](./docs/offline_image.md)_ | _乾淨環境下製作快照 ( 離線鏡像 ) ➔ 備援防線_ |
 |   |   |   |
-| _**⭐ 災難復原**_ | _鏡像還原_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
-| _**⭐ 密鑰管理器**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |
-| _**⭐ 多元檔案管理器**_ | _Cryptomator_ | _地/雲端 ( 雙向同步/鏡像 ) + 加密資料夾_ |
-| _**⭐ 3-2-1 備份原則**_ | _[Document](./docs/2FA.md)_ | _三份資料、兩種媒介、一份異地_ |
+| _**🔄 災難復原**_ | _鏡像還原_ | _鏡像恢復 ( 快照包含系統穩定的時間點 + 已建置完善全應用 )_ |
+|   |   |   |
+| _**🔒 密鑰管理器**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |
+| _**🔒 多元檔案管理器**_ | _Cryptomator_ | _地/雲端 ( 雙向同步/鏡像 ) + 加密資料夾_ |
+| _**🔒 3-2-1 備份原則**_ | _[Document](./docs/2FA.md)_ | _三份資料、兩種媒介、一份異地_ |
 
 <br>
 
