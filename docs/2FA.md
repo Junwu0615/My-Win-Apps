@@ -6,15 +6,21 @@
 ### *⭐ 存放設計*
 ```
 •　Level 1.　數位同步
-   - Bitwarden (All Password)
+   - Bitwarden (95% of the Password)
+     ➔ 2FA 須獨立 (Google Authenticator)
    - Microsoft Authenticator (2FA)
+     ➔ 同時備份 KeePassXC.kdbx (Level 2)
 
-•　Level 2.　實體備份 ➔ ⭐異地保存
-   - 隨身硬碟/USB 存有加密後的 KeePassXC.kdbx + Bitwarden 備份檔
+•　Level 2.　實體備份
+   - ⭐異地保存中的硬碟/USB 存有加密後的 ...
+     ➔ Bitwarden 備份檔
+     ➔ KeePassXC.kdbx
 
 •　Level 3.　紙本防禦
-   - Bitwarden Emergency Kit (含 Master Password)
-   - Recovery Codes (重要帳號的手寫紙本)
+   - Bitwarden Emergency Kit 
+     ➔ 含 Master Password
+   - Recovery Codes
+     ➔ 重要帳號的手寫紙本
 ```
 
 <br>
@@ -26,7 +32,7 @@
 •　現狀： Bitwarden 需要 TOTP 驗證碼才能登入
 •　風險： 如果沒有手機，也沒記住 Master Password，就進不去
 •　解法：
-   - 緊急存取代碼 (Emergency Kit)： 這是 Bitwarden 官方提供的 PDF，
+   - 緊急存取代碼 (Emergency Kit)： Bitwarden 官方提供的 PDF，
      上面有 Master Password 和 Recovery Key。請將此 PDF 列印出來，存放在實體保險箱或信任的人手中。
      只要有這張紙，即便手機、電腦全毀，都能在任何一台新裝置上救回所有帳號。
 ```
@@ -52,9 +58,9 @@
     針對最重要的幾個「根帳號」（如電子郵件主信箱、GitHub、AWS/Azure 雲端帳號），
     必須擁有它們在設定 2FA 時產生的 「備援碼 (Recovery Codes)」。
     
-  - 執行細節： 這些代碼應該手抄在紙本筆記本上，並放在一個 「非數位化」的地方（例如放在皮夾內的夾層、老家相簿後面）。
+  - 執行細節： 代碼應該手抄在紙本筆記本上，並放在一個 「非數位化」的地方（例如放在皮夾內的夾層、老家相簿後面）。
   
-  - 結論： 只要能救回「郵件信箱」這個核心帳號，其他的帳號理論上都能透過「忘記密碼」流程發送驗證碼到信箱來重新奪回控制權。
+  - 結論： 只要能救回「郵件信箱」核心帳號，其他的帳號理論上都能透過「忘記密碼」流程發送驗證碼到信箱來重新奪回控制權。
 ```
 
 <br><br>

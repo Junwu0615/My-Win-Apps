@@ -75,7 +75,7 @@
 |   |   |   |
 | _**🔒 [ 加碼 ] 密鑰管理**_ | _Bitwarden_ | _9 成密鑰存放處 + 2FA +<br>Cryptomator 保險箱的主密碼 ( Master Password ) +<br>BitLocker 密鑰復原檔 ( Recovery Key )_ |
 | _**🔒 [ 加碼 ] 多元檔案管理**_ | _Cryptomator_ | _加密資料夾_ |
-| _**🔒 [ 加碼 ] 2FA 管理**_ | _[Document](./docs/2FA.md)_ | _3-2-1 備份原則 : 三份資料、兩種媒介、一份異地_ |
+| _**🔒 [ 加碼 ] 雙重驗證管理**_ | _[Two-Factor Authentication](./docs/2FA.md)_ | _3-2-1 備份原則 : 三份資料、兩種媒介、一份異地_ |
 
 <br>
 
